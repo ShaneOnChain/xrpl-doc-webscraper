@@ -1,0 +1,477 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.amounts.html",
+  "section": "models",
+  "name": "XRPL Amount Models",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount",
+      "name": "IssuedCurrencyAmount",
+      "signature": "class xrpl.models.amounts.IssuedCurrencyAmount(*, currency: str = <object object>, issuer: str = <object object>, value: str | int | float = <object object>)",
+      "description": "Bases: IssuedCurrency\nSpecifies an amount in an issued currency.\nSee https://xrpl.org/currency-formats.html#issued-currency-amounts.\nThis field is required.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nConverts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.\nBuild an IssuedCurrency from this IssuedCurrencyAmount.\nThe IssuedCurrency for this IssuedCurrencyAmount.\nReturns the dictionary representation of an IssuedCurrencyAmount.\nThe dictionary representation of an IssuedCurrencyAmount.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.\nThis field is required.",
+      "methods": [
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+          "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the BaseModel from."
+          ],
+          "returns": [
+            "A new BaseModel object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A BaseModel object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_amount",
+          "name": "to_amount",
+          "signature": "to_amount(value: str | int | float) → IssuedCurrencyAmount",
+          "description": "Converts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.",
+          "parameters": [
+            "value – The amount of issued currency in the IssuedCurrencyAmount."
+          ],
+          "returns": [
+            "An IssuedCurrencyAmount that represents the issued currency and theprovided value."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_currency",
+          "name": "to_currency",
+          "signature": "to_currency() → IssuedCurrency",
+          "description": "Build an IssuedCurrency from this IssuedCurrencyAmount.\nThe IssuedCurrency for this IssuedCurrencyAmount.",
+          "parameters": [],
+          "returns": [
+            "The IssuedCurrency for this IssuedCurrencyAmount."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, str]",
+          "description": "Returns the dictionary representation of an IssuedCurrencyAmount.\nThe dictionary representation of an IssuedCurrencyAmount.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of an IssuedCurrencyAmount."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "currency: str",
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.currency",
+          "description": "This field is required."
+        },
+        {
+          "name": "issuer: str",
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.issuer",
+          "description": "This field is required."
+        },
+        {
+          "name": "value: str | int | float",
+          "id": "xrpl.models.amounts.IssuedCurrencyAmount.value",
+          "description": "This field is required."
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount",
+      "name": "MPTAmount",
+      "signature": "class xrpl.models.amounts.MPTAmount(*, mpt_issuance_id: str = <object object>, value: str | int | float = <object object>)",
+      "description": "Bases: BaseModel\nSpecifies an MPT amount.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nReturns the dictionary representation of an MPTAmount.\nThe dictionary representation of an MPTAmount.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.\nThis field is required.",
+      "methods": [
+        {
+          "id": "xrpl.models.amounts.MPTAmount.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+          "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the BaseModel from."
+          ],
+          "returns": [
+            "A new BaseModel object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.MPTAmount.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A BaseModel object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.MPTAmount.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.MPTAmount.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.MPTAmount.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, str]",
+          "description": "Returns the dictionary representation of an MPTAmount.\nThe dictionary representation of an MPTAmount.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of an MPTAmount."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.amounts.MPTAmount.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "mpt_issuance_id: str",
+          "id": "xrpl.models.amounts.MPTAmount.mpt_issuance_id",
+          "description": "This field is required."
+        },
+        {
+          "name": "value: str | int | float",
+          "id": "xrpl.models.amounts.MPTAmount.value",
+          "description": "This field is required."
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount",
+      "name": "IssuedCurrencyAmount",
+      "signature": "class xrpl.models.amounts.IssuedCurrencyAmount(*, currency: str = <object object>, issuer: str = <object object>, value: str | int | float = <object object>)",
+      "description": "Bases: IssuedCurrency\nSpecifies an amount in an issued currency.\nSee https://xrpl.org/currency-formats.html#issued-currency-amounts.\nThis field is required.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nConverts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.\nBuild an IssuedCurrency from this IssuedCurrencyAmount.\nThe IssuedCurrency for this IssuedCurrencyAmount.\nReturns the dictionary representation of an IssuedCurrencyAmount.\nThe dictionary representation of an IssuedCurrencyAmount.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.\nThis field is required.",
+      "parameters": [
+        "value – The value to construct the BaseModel from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.",
+        "value – The amount of issued currency in the IssuedCurrencyAmount."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters.",
+        "A BaseModel object instantiated from the input.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether this BaseModel is valid.",
+        "An IssuedCurrencyAmount that represents the issued currency and theprovided value.",
+        "The IssuedCurrency for this IssuedCurrencyAmount.",
+        "The dictionary representation of an IssuedCurrencyAmount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+      "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A BaseModel object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_amount",
+      "name": "to_amount",
+      "signature": "to_amount(value: str | int | float) → IssuedCurrencyAmount",
+      "description": "Converts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.",
+      "parameters": [
+        "value – The amount of issued currency in the IssuedCurrencyAmount."
+      ],
+      "returns": [
+        "An IssuedCurrencyAmount that represents the issued currency and theprovided value."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_currency",
+      "name": "to_currency",
+      "signature": "to_currency() → IssuedCurrency",
+      "description": "Build an IssuedCurrency from this IssuedCurrencyAmount.\nThe IssuedCurrency for this IssuedCurrencyAmount.",
+      "parameters": [],
+      "returns": [
+        "The IssuedCurrency for this IssuedCurrencyAmount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, str]",
+      "description": "Returns the dictionary representation of an IssuedCurrencyAmount.\nThe dictionary representation of an IssuedCurrencyAmount.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of an IssuedCurrencyAmount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.IssuedCurrencyAmount.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount",
+      "name": "MPTAmount",
+      "signature": "class xrpl.models.amounts.MPTAmount(*, mpt_issuance_id: str = <object object>, value: str | int | float = <object object>)",
+      "description": "Bases: BaseModel\nSpecifies an MPT amount.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nReturns the dictionary representation of an MPTAmount.\nThe dictionary representation of an MPTAmount.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.\nThis field is required.",
+      "parameters": [
+        "value – The value to construct the BaseModel from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters.",
+        "A BaseModel object instantiated from the input.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether this BaseModel is valid.",
+        "The dictionary representation of an MPTAmount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+      "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A BaseModel object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, str]",
+      "description": "Returns the dictionary representation of an MPTAmount.\nThe dictionary representation of an MPTAmount.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of an MPTAmount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.MPTAmount.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.get_amount_value",
+      "name": "get_amount_value",
+      "signature": "xrpl.models.amounts.get_amount_value(amount: IssuedCurrencyAmount | MPTAmount | str) → float",
+      "description": "Returns the value of an amount irrespective of its currency.\namount – The Amount object whose value we want.\nThe value of the amount irrespective of its currency.",
+      "parameters": [
+        "amount – The Amount object whose value we want."
+      ],
+      "returns": [
+        "The value of the amount irrespective of its currency."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.is_issued_currency",
+      "name": "is_issued_currency",
+      "signature": "xrpl.models.amounts.is_issued_currency(amount: IssuedCurrencyAmount | MPTAmount | str) → bool",
+      "description": "Returns whether amount is an issued currency value, as opposed to an XRP or MPT value.\namount – The Amount object whose type is being checked.\nWhether the amount is an issued currency value.",
+      "parameters": [
+        "amount – The Amount object whose type is being checked."
+      ],
+      "returns": [
+        "Whether the amount is an issued currency value."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.is_mpt",
+      "name": "is_mpt",
+      "signature": "xrpl.models.amounts.is_mpt(amount: IssuedCurrencyAmount | MPTAmount | str) → bool",
+      "description": "Returns whether amount is an MPT value, as opposed to an XRP or an issued currency value.\namount – The Amount object whose type is being checked.\nWhether the amount is an issued currency value.",
+      "parameters": [
+        "amount – The Amount object whose type is being checked."
+      ],
+      "returns": [
+        "Whether the amount is an issued currency value."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.amounts.is_xrp",
+      "name": "is_xrp",
+      "signature": "xrpl.models.amounts.is_xrp(amount: IssuedCurrencyAmount | MPTAmount | str) → bool",
+      "description": "Returns whether amount is an XRP value, as opposed to an issued currency or MPT value.\namount – The Amount object whose type is being checked.\nWhether the amount is an XRP value.",
+      "parameters": [
+        "amount – The Amount object whose type is being checked."
+      ],
+      "returns": [
+        "Whether the amount is an XRP value."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

@@ -1,0 +1,28 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.wallet.html",
+  "section": "asyncio",
+  "name": "Wallet Methods",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.asyncio.wallet.generate_faucet_wallet",
+      "name": "generate_faucet_wallet",
+      "signature": "async xrpl.asyncio.wallet.generate_faucet_wallet(client: Client, wallet: Wallet | None = None, debug: bool = False, faucet_host: str | None = None, usage_context: str | None = None, user_agent: str | None = 'xrpl-py') → Wallet",
+      "description": "Generates a random wallet and funds it using the XRPL Testnet Faucet.\nclient – the network client used to make network calls.\nwallet – the wallet to fund. If omitted or None, a new wallet is created.\ndebug – Whether to print debug information as it creates the wallet.\nfaucet_host – A custom host to use for funding a wallet. In environments other than devnet and testnet, this parameter is required.\nusage_context – The intended use case for the funding request (for example, testing). This information will be included in the json body of the HTTP request to the faucet.\nuser_agent – A string representing the user agent (software/ client used) for the HTTP request. Default is “xrpl-py”.\nA Wallet on the testnet that contains some amount of XRP.\nXRPLFaucetException – if an address could not be funded with the faucet.\nXRPLRequestFailureException – if a request to the ledger fails.\nrequests.exceptions.HTTPError – if the request to the faucet fails.",
+      "parameters": [
+        "client – the network client used to make network calls.",
+        "wallet – the wallet to fund. If omitted or None, a new wallet is created.",
+        "debug – Whether to print debug information as it creates the wallet.",
+        "faucet_host – A custom host to use for funding a wallet. In environments other than devnet and testnet, this parameter is required.",
+        "usage_context – The intended use case for the funding request (for example, testing). This information will be included in the json body of the HTTP request to the faucet.",
+        "user_agent – A string representing the user agent (software/ client used) for the HTTP request. Default is “xrpl-py”."
+      ],
+      "returns": [
+        "A Wallet on the testnet that contains some amount of XRP."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

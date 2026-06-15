@@ -1,0 +1,177 @@
+{
+  "base_url": "https://xrpl-py.readthedocs.io/en/stable/",
+  "sections": {
+    "account": [
+      {
+        "name": "Account Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.account.html",
+        "file": "account_methods.json",
+        "classes": 0,
+        "methods": 5
+      }
+    ],
+    "ledger": [
+      {
+        "name": "Ledger Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.ledger.html",
+        "file": "ledger_methods.json",
+        "classes": 0,
+        "methods": 3
+      }
+    ],
+    "transaction": [
+      {
+        "name": "Transaction Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.transaction.html",
+        "file": "transaction_methods.json",
+        "classes": 0,
+        "methods": 9
+      }
+    ],
+    "wallet": [
+      {
+        "name": "Wallet Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.wallet.html",
+        "file": "wallet_methods.json",
+        "classes": 1,
+        "methods": 8
+      }
+    ],
+    "clients": [
+      {
+        "name": "Network Clients",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.clients.html",
+        "file": "network_clients.json",
+        "classes": 2,
+        "methods": 14
+      }
+    ],
+    "models": [
+      {
+        "name": "XRPL Amount Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.amounts.html",
+        "file": "xrpl_amount_models.json",
+        "classes": 2,
+        "methods": 20
+      },
+      {
+        "name": "XRPL Currency Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.currencies.html",
+        "file": "xrpl_currency_models.json",
+        "classes": 2,
+        "methods": 16
+      },
+      {
+        "name": "XRPL Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.html",
+        "file": "xrpl_models.json",
+        "classes": 4,
+        "methods": 12
+      },
+      {
+        "name": "XRPL Pseudo-Transaction Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.pseudo_transactions.html",
+        "file": "xrpl_pseudo-transaction_models.json",
+        "classes": 5,
+        "methods": 61
+      },
+      {
+        "name": "XRPL Request Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.requests.html",
+        "file": "xrpl_request_models.json",
+        "classes": 58,
+        "methods": 661
+      },
+      {
+        "name": "XRPL Transaction Models",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.html",
+        "file": "xrpl_transaction_models.json",
+        "classes": 88,
+        "methods": 1078
+      }
+    ],
+    "utils": [
+      {
+        "name": "Utilities",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.utils.html",
+        "file": "utilities.json",
+        "classes": 0,
+        "methods": 14
+      }
+    ],
+    "core": [
+      {
+        "name": "XRPL Address Codec",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.addresscodec.html",
+        "file": "xrpl_address_codec.json",
+        "classes": 0,
+        "methods": 13
+      },
+      {
+        "name": "XRPL Binary Codec",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.binarycodec.html",
+        "file": "xrpl_binary_codec.json",
+        "classes": 0,
+        "methods": 5
+      },
+      {
+        "name": "XRPL Core Codecs",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.html",
+        "file": "xrpl_core_codecs.json",
+        "classes": 0,
+        "methods": 0
+      },
+      {
+        "name": "XRPL Keypairs Codec",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.keypairs.html",
+        "file": "xrpl_keypairs_codec.json",
+        "classes": 0,
+        "methods": 5
+      }
+    ],
+    "asyncio": [
+      {
+        "name": "Account Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.account.html",
+        "file": "account_methods.json",
+        "classes": 0,
+        "methods": 5
+      },
+      {
+        "name": "Async Network Clients",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.clients.html",
+        "file": "async_network_clients.json",
+        "classes": 2,
+        "methods": 14
+      },
+      {
+        "name": "Async Support",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.html",
+        "file": "async_support.json",
+        "classes": 0,
+        "methods": 0
+      },
+      {
+        "name": "Ledger Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.ledger.html",
+        "file": "ledger_methods.json",
+        "classes": 0,
+        "methods": 3
+      },
+      {
+        "name": "Transaction Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.transaction.html",
+        "file": "transaction_methods.json",
+        "classes": 0,
+        "methods": 8
+      },
+      {
+        "name": "Wallet Methods",
+        "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.wallet.html",
+        "file": "wallet_methods.json",
+        "classes": 0,
+        "methods": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.addresscodec.html",
+  "section": "core",
+  "name": "XRPL Address Codec",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.core.addresscodec.classic_address_to_xaddress",
+      "name": "classic_address_to_xaddress",
+      "signature": "xrpl.core.addresscodec.classic_address_to_xaddress(classic_address: str, tag: int | None, is_test_network: bool) → str",
+      "description": "Returns the X-Address representation of the data.\nclassic_address – The base58 encoding of the classic address.\ntag – The destination tag.\nis_test_network – Whether it is the test network or the main network.\nThe X-Address representation of the data.\nXRPLAddressCodecException – If the classic address does not have enough bytes or the tag is invalid.",
+      "parameters": [
+        "classic_address – The base58 encoding of the classic address.",
+        "tag – The destination tag.",
+        "is_test_network – Whether it is the test network or the main network."
+      ],
+      "returns": [
+        "The X-Address representation of the data."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.decode_account_public_key",
+      "name": "decode_account_public_key",
+      "signature": "xrpl.core.addresscodec.decode_account_public_key(account_public_key: str) → bytes",
+      "description": "Returns the decoded bytes of the account public key.\naccount_public_key – Account public key to be decoded.\nThe decoded bytes of the account public key.",
+      "parameters": [
+        "account_public_key – Account public key to be decoded."
+      ],
+      "returns": [
+        "The decoded bytes of the account public key."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.decode_classic_address",
+      "name": "decode_classic_address",
+      "signature": "xrpl.core.addresscodec.decode_classic_address(classic_address: str) → bytes",
+      "description": "Returns the decoded bytes of the classic address.\nclassic_address – Classic address to be decoded.\nThe decoded bytes of the classic address.",
+      "parameters": [
+        "classic_address – Classic address to be decoded."
+      ],
+      "returns": [
+        "The decoded bytes of the classic address."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.decode_node_public_key",
+      "name": "decode_node_public_key",
+      "signature": "xrpl.core.addresscodec.decode_node_public_key(node_public_key: str) → bytes",
+      "description": "Returns the decoded bytes of the node public key\nnode_public_key – Node public key to be decoded.\nThe decoded bytes of the node public key.",
+      "parameters": [
+        "node_public_key – Node public key to be decoded."
+      ],
+      "returns": [
+        "The decoded bytes of the node public key."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.decode_seed",
+      "name": "decode_seed",
+      "signature": "xrpl.core.addresscodec.decode_seed(seed: str, algorithm: CryptoAlgorithm | None = None) → Tuple[bytes, CryptoAlgorithm]",
+      "description": "Returns (decoded seed, its algorithm).\nseed – The b58 encoding of a seed.\nalgorithm – The encoding algorithm. Inferred from the seed if not included.\n(decoded seed, its algorithm).\nXRPLAddressCodecException – If the seed is invalid.",
+      "parameters": [
+        "seed – The b58 encoding of a seed.",
+        "algorithm – The encoding algorithm. Inferred from the seed if not included."
+      ],
+      "returns": [
+        "(decoded seed, its algorithm)."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.encode_account_public_key",
+      "name": "encode_account_public_key",
+      "signature": "xrpl.core.addresscodec.encode_account_public_key(bytestring: bytes) → str",
+      "description": "Returns the account public key encoding of these bytes as a base58 string.\nbytestring – Bytes to be encoded.\nThe account public key encoding of these bytes as a base58 string.",
+      "parameters": [
+        "bytestring – Bytes to be encoded."
+      ],
+      "returns": [
+        "The account public key encoding of these bytes as a base58 string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.encode_classic_address",
+      "name": "encode_classic_address",
+      "signature": "xrpl.core.addresscodec.encode_classic_address(bytestring: bytes) → str",
+      "description": "Returns the classic address encoding of these bytes as a base58 string.\nbytestring – Bytes to be encoded.\nThe classic address encoding of these bytes as a base58 string.",
+      "parameters": [
+        "bytestring – Bytes to be encoded."
+      ],
+      "returns": [
+        "The classic address encoding of these bytes as a base58 string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.encode_node_public_key",
+      "name": "encode_node_public_key",
+      "signature": "xrpl.core.addresscodec.encode_node_public_key(bytestring: bytes) → str",
+      "description": "Returns the node public key encoding of these bytes as a base58 string.\nbytestring – Bytes to be encoded.\nThe node public key encoding of these bytes as a base58 string.",
+      "parameters": [
+        "bytestring – Bytes to be encoded."
+      ],
+      "returns": [
+        "The node public key encoding of these bytes as a base58 string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.encode_seed",
+      "name": "encode_seed",
+      "signature": "xrpl.core.addresscodec.encode_seed(entropy: bytes, encoding_type: CryptoAlgorithm) → str",
+      "description": "Returns an encoded seed.\nentropy – Entropy bytes of SEED_LENGTH.\nencoding_type – Either ED25519 or SECP256K1.\nAn encoded seed.\nXRPLAddressCodecException – If entropy is not of length SEED_LENGTH or the encoding type is not one of CryptoAlgorithm.",
+      "parameters": [
+        "entropy – Entropy bytes of SEED_LENGTH.",
+        "encoding_type – Either ED25519 or SECP256K1."
+      ],
+      "returns": [
+        "An encoded seed."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.ensure_classic_address",
+      "name": "ensure_classic_address",
+      "signature": "xrpl.core.addresscodec.ensure_classic_address(account: str) → str",
+      "description": "If an address is an X-Address, converts it to a classic address.\naccount – A classic address or X-address.\nThe account’s classic address\nXRPLAddressCodecException – if the X-Address has an associated tag.",
+      "parameters": [
+        "account – A classic address or X-address."
+      ],
+      "returns": [
+        "The account’s classic address"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.is_valid_classic_address",
+      "name": "is_valid_classic_address",
+      "signature": "xrpl.core.addresscodec.is_valid_classic_address(classic_address: str) → bool",
+      "description": "Returns whether classic_address is a valid classic address.\nclassic_address – The classic address to validate.\nWhether classic_address is a valid classic address.",
+      "parameters": [
+        "classic_address – The classic address to validate."
+      ],
+      "returns": [
+        "Whether classic_address is a valid classic address."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.is_valid_xaddress",
+      "name": "is_valid_xaddress",
+      "signature": "xrpl.core.addresscodec.is_valid_xaddress(xaddress: str) → bool",
+      "description": "Returns whether xaddress is a valid X-Address.\nxaddress – The X-Address to check for validity.\nWhether xaddress is a valid X-Address.",
+      "parameters": [
+        "xaddress – The X-Address to check for validity."
+      ],
+      "returns": [
+        "Whether xaddress is a valid X-Address."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.addresscodec.xaddress_to_classic_address",
+      "name": "xaddress_to_classic_address",
+      "signature": "xrpl.core.addresscodec.xaddress_to_classic_address(xaddress: str) → Tuple[str, int | None, bool]",
+      "description": "Returns a tuple containing the classic address, tag, and whether the address is on a test network for an X-Address.\nxaddress – base58-encoded X-Address.\nclassic_address: the base58 classic address tag: the destination tag is_test_network: whether the address is on the test network (or main)\nA tuple containing",
+      "parameters": [
+        "xaddress – base58-encoded X-Address."
+      ],
+      "returns": [
+        "classic_address: the base58 classic address tag: the destination tag is_test_network: whether the address is on the test network (or main)"
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

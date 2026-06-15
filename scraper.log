@@ -1,0 +1,55 @@
+2025-02-25 23:05:47,147 - xrpl_scraper - INFO - Starting scrape of section: account
+2025-02-25 23:05:47,147 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.account.html
+2025-02-25 23:05:47,351 - xrpl_scraper - INFO - Saved module info to xrpl_docs\account\account_methods.json
+2025-02-25 23:05:47,351 - xrpl_scraper - INFO - Starting scrape of section: ledger
+2025-02-25 23:05:47,351 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.ledger.html
+2025-02-25 23:05:47,486 - xrpl_scraper - INFO - Saved module info to xrpl_docs\ledger\ledger_methods.json
+2025-02-25 23:05:47,486 - xrpl_scraper - INFO - Starting scrape of section: transaction
+2025-02-25 23:05:47,500 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.transaction.html
+2025-02-25 23:05:47,742 - xrpl_scraper - INFO - Saved module info to xrpl_docs\transaction\transaction_methods.json
+2025-02-25 23:05:47,742 - xrpl_scraper - INFO - Starting scrape of section: wallet
+2025-02-25 23:05:47,749 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.wallet.html
+2025-02-25 23:05:47,919 - xrpl_scraper - INFO - Saved module info to xrpl_docs\wallet\wallet_methods.json
+2025-02-25 23:05:47,919 - xrpl_scraper - INFO - Starting scrape of section: clients
+2025-02-25 23:05:47,919 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.clients.html
+2025-02-25 23:05:48,197 - xrpl_scraper - INFO - Saved module info to xrpl_docs\clients\network_clients.json
+2025-02-25 23:05:48,197 - xrpl_scraper - INFO - Starting scrape of section: models
+2025-02-25 23:05:48,197 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.html
+2025-02-25 23:05:48,401 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_models.json
+2025-02-25 23:05:49,404 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.amounts.html
+2025-02-25 23:05:49,586 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_amount_models.json
+2025-02-25 23:05:50,598 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.currencies.html
+2025-02-25 23:05:50,814 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_currency_models.json
+2025-02-25 23:05:51,815 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.requests.html
+2025-02-25 23:05:53,576 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_request_models.json
+2025-02-25 23:05:54,583 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.html
+2025-02-25 23:05:57,891 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_transaction_models.json
+2025-02-25 23:05:58,893 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.pseudo_transactions.html
+2025-02-25 23:05:59,388 - xrpl_scraper - INFO - Saved module info to xrpl_docs\models\xrpl_pseudo-transaction_models.json
+2025-02-25 23:05:59,388 - xrpl_scraper - INFO - Starting scrape of section: utils
+2025-02-25 23:05:59,388 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.utils.html
+2025-02-25 23:05:59,655 - xrpl_scraper - INFO - Saved module info to xrpl_docs\utils\utilities.json
+2025-02-25 23:05:59,655 - xrpl_scraper - INFO - Starting scrape of section: core
+2025-02-25 23:05:59,655 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.html
+2025-02-25 23:05:59,821 - xrpl_scraper - INFO - Saved module info to xrpl_docs\core\xrpl_core_codecs.json
+2025-02-25 23:06:00,836 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.addresscodec.html
+2025-02-25 23:06:01,089 - xrpl_scraper - INFO - Saved module info to xrpl_docs\core\xrpl_address_codec.json
+2025-02-25 23:06:02,100 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.binarycodec.html
+2025-02-25 23:06:02,286 - xrpl_scraper - INFO - Saved module info to xrpl_docs\core\xrpl_binary_codec.json
+2025-02-25 23:06:03,287 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.keypairs.html
+2025-02-25 23:06:03,470 - xrpl_scraper - INFO - Saved module info to xrpl_docs\core\xrpl_keypairs_codec.json
+2025-02-25 23:06:03,470 - xrpl_scraper - INFO - Starting scrape of section: asyncio
+2025-02-25 23:06:03,470 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.html
+2025-02-25 23:06:03,736 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\async_support.json
+2025-02-25 23:06:04,751 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.account.html
+2025-02-25 23:06:04,967 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\account_methods.json
+2025-02-25 23:06:05,977 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.ledger.html
+2025-02-25 23:06:06,266 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\ledger_methods.json
+2025-02-25 23:06:07,268 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.transaction.html
+2025-02-25 23:06:07,532 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\transaction_methods.json
+2025-02-25 23:06:08,545 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.wallet.html
+2025-02-25 23:06:08,784 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\wallet_methods.json
+2025-02-25 23:06:09,789 - xrpl_scraper - INFO - Scraping https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.clients.html
+2025-02-25 23:06:10,101 - xrpl_scraper - INFO - Saved module info to xrpl_docs\asyncio\async_network_clients.json
+2025-02-25 23:06:10,347 - xrpl_scraper - INFO - Created index file at xrpl_docs\index.json
+2025-02-25 23:06:10,347 - xrpl_scraper - INFO - Scraping completed!

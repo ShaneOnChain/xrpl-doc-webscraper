@@ -1,0 +1,51 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.ledger.html",
+  "section": "asyncio",
+  "name": "Ledger Methods",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.asyncio.ledger.get_fee",
+      "name": "get_fee",
+      "signature": "async xrpl.asyncio.ledger.get_fee(client: Client, *, max_fee: float | None = 2, fee_type: str = 'open') → str",
+      "description": "Query the ledger for the current transaction fee.\nclient – the network client used to make network calls.\nmax_fee – The maximum fee in XRP that the user wants to pay. If load gets too high, then the fees will not scale past the maximum fee. If None, there is no ceiling for the fee. The default is 2 XRP.\nfee_type – The type of fee to return. The options are “open” (the load-scaled fee to get into the open ledger), “minimum” (the minimum transaction fee) or “dynamic” (dynamic fee-calculation based on the queue size of the node). The default is “open”. The recommended option is “dynamic”.\nThe transaction fee, in drops. Read more about drops\nXRPLException – if an incorrect option for fee_type is passed in.\nXRPLRequestFailureException – if the rippled API call fails.",
+      "parameters": [
+        "client – the network client used to make network calls.",
+        "max_fee – The maximum fee in XRP that the user wants to pay. If load gets too high, then the fees will not scale past the maximum fee. If None, there is no ceiling for the fee. The default is 2 XRP.",
+        "fee_type – The type of fee to return. The options are “open” (the load-scaled fee to get into the open ledger), “minimum” (the minimum transaction fee) or “dynamic” (dynamic fee-calculation based on the queue size of the node). The default is “open”. The recommended option is “dynamic”."
+      ],
+      "returns": [
+        "The transaction fee, in drops. Read more about drops"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.ledger.get_latest_open_ledger_sequence",
+      "name": "get_latest_open_ledger_sequence",
+      "signature": "async xrpl.asyncio.ledger.get_latest_open_ledger_sequence(client: Client) → int",
+      "description": "Returns the sequence number of the latest open ledger.\nclient – The network client to use to send the request.\nThe sequence number of the latest open ledger.\nXRPLRequestFailureException – if the rippled API call fails.",
+      "parameters": [
+        "client – The network client to use to send the request."
+      ],
+      "returns": [
+        "The sequence number of the latest open ledger."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.ledger.get_latest_validated_ledger_sequence",
+      "name": "get_latest_validated_ledger_sequence",
+      "signature": "async xrpl.asyncio.ledger.get_latest_validated_ledger_sequence(client: Client) → int",
+      "description": "Returns the sequence number of the latest validated ledger.\nclient – The network client to use to send the request.\nThe sequence number of the latest validated ledger.\nXRPLRequestFailureException – if the rippled API call fails.",
+      "parameters": [
+        "client – The network client to use to send the request."
+      ],
+      "returns": [
+        "The sequence number of the latest validated ledger."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

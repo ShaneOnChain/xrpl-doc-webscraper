@@ -1,0 +1,81 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.keypairs.html",
+  "section": "core",
+  "name": "XRPL Keypairs Codec",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.core.keypairs.derive_classic_address",
+      "name": "derive_classic_address",
+      "signature": "xrpl.core.keypairs.derive_classic_address(public_key: str) → str",
+      "description": "Derive the XRP Ledger classic address for a given public key. See Address Derivation for more information.\npublic_key – The public key to derive the address from, as hexadecimal.\nThe classic address corresponding to the given public key.",
+      "parameters": [
+        "public_key – The public key to derive the address from, as hexadecimal."
+      ],
+      "returns": [
+        "The classic address corresponding to the given public key."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.keypairs.derive_keypair",
+      "name": "derive_keypair",
+      "signature": "xrpl.core.keypairs.derive_keypair(seed: str, validator: bool = False, algorithm: CryptoAlgorithm | None = None) → Tuple[str, str]",
+      "description": "Derive the public and private keys from a given seed value.\nseed – Seed to derive the key pair from. Use generate_seed() to generate an appropriate value.\nvalidator – Whether the keypair is a validator keypair.\nalgorithm – The algorithm used to encode the keys. Inferred from the seed if not included.\nA (public key, private key) pair derived from the given seed.\nXRPLKeypairsException – If the derived keypair did not generate a verifiable signature.",
+      "parameters": [
+        "seed – Seed to derive the key pair from. Use generate_seed() to generate an appropriate value.",
+        "validator – Whether the keypair is a validator keypair.",
+        "algorithm – The algorithm used to encode the keys. Inferred from the seed if not included."
+      ],
+      "returns": [
+        "A (public key, private key) pair derived from the given seed."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.keypairs.generate_seed",
+      "name": "generate_seed",
+      "signature": "xrpl.core.keypairs.generate_seed(entropy: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → str",
+      "description": "Generate a seed value that cryptographic keys can be derived from.\nentropy – Hexadecimal string that is addresscodec.SEED_LENGTH bytes long\nalgorithm – CryptoAlgorithm to use for seed generation. The default is CryptoAlgorithm.ED25519.\nA seed value that can be used to derive a key pair with the given cryptographic algorithm.\nXRPLAddressCodecException – If entropy is not of length addresscodec.SEED_LENGTH, this exception will be thrown in addresscodec.encode_seed.",
+      "parameters": [
+        "entropy – Hexadecimal string that is addresscodec.SEED_LENGTH bytes long",
+        "algorithm – CryptoAlgorithm to use for seed generation. The default is CryptoAlgorithm.ED25519."
+      ],
+      "returns": [
+        "A seed value that can be used to derive a key pair with the given cryptographic algorithm."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.keypairs.is_valid_message",
+      "name": "is_valid_message",
+      "signature": "xrpl.core.keypairs.is_valid_message(message: bytes, signature: bytes, public_key: str) → bool",
+      "description": "Verifies the signature on a given message.\nmessage – The message to validate.\nsignature – The signature of the message.\npublic_key – The public key to use to verify the message and signature.\nWhether the message is valid for the given signature and public key.",
+      "parameters": [
+        "message – The message to validate.",
+        "signature – The signature of the message.",
+        "public_key – The public key to use to verify the message and signature."
+      ],
+      "returns": [
+        "Whether the message is valid for the given signature and public key."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.keypairs.sign",
+      "name": "sign",
+      "signature": "xrpl.core.keypairs.sign(message: str | bytes, private_key: str) → str",
+      "description": "Sign a message using a given private key.\nmessage – The message to sign, as bytes.\nprivate_key – The private key to use to sign the message.\nSigned message, as hexadecimal.",
+      "parameters": [
+        "message – The message to sign, as bytes.",
+        "private_key – The private key to use to sign the message."
+      ],
+      "returns": [
+        "Signed message, as hexadecimal."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

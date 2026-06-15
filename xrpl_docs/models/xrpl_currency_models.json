@@ -1,0 +1,420 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.currencies.html",
+  "section": "models",
+  "name": "XRPL Currency Models",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency",
+      "name": "IssuedCurrency",
+      "signature": "class xrpl.models.currencies.IssuedCurrency(*, currency: str = <object object>, issuer: str = <object object>)",
+      "description": "Bases: BaseModel\nSpecifies an amount in an issued currency, but without a value field. This format is used for some book order requests.\nSee https://xrpl.org/currency-formats.html#specifying-currency-amounts\nThis field is required.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nConverts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.\nReturns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+          "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the BaseModel from."
+          ],
+          "returns": [
+            "A new BaseModel object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A BaseModel object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.to_amount",
+          "name": "to_amount",
+          "signature": "to_amount(value: str | int | float) → IssuedCurrencyAmount",
+          "description": "Converts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.",
+          "parameters": [
+            "value – The amount of issued currency in the IssuedCurrencyAmount."
+          ],
+          "returns": [
+            "An IssuedCurrencyAmount that represents the issued currency and theprovided value."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of a BaseModel."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.IssuedCurrency.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "currency: str",
+          "id": "xrpl.models.currencies.IssuedCurrency.currency",
+          "description": "This field is required."
+        },
+        {
+          "name": "issuer: str",
+          "id": "xrpl.models.currencies.IssuedCurrency.issuer",
+          "description": "This field is required."
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.currencies.XRP",
+      "name": "XRP",
+      "signature": "class xrpl.models.currencies.XRP",
+      "description": "Bases: BaseModel\nSpecifies XRP as a currency, without a value. Normally, you will not use this model as it does not specify an amount of XRP. In cases where you need to specify an amount of XRP, you will use a string. However, for some book order requests where currencies are specified without amounts, you may need to specify the use of XRP, without a value. In these cases, you will use this object.\nSee https://xrpl.org/currency-formats.html#specifying-currency-amounts\nConstruct a new XRP from a dictionary of parameters.\nvalue – The value to construct the XRP from.\nA new XRP object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nConverts value to XRP.\nvalue – The amount of XRP.\nA string representation of XRP amount.\nReturns the dictionary representation of an XRP currency object.\nThe dictionary representation of an XRP currency object.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.currencies.XRP.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+          "description": "Construct a new XRP from a dictionary of parameters.\nvalue – The value to construct the XRP from.\nA new XRP object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the XRP from."
+          ],
+          "returns": [
+            "A new XRP object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A BaseModel object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.to_amount",
+          "name": "to_amount",
+          "signature": "to_amount(value: str | int | float) → str",
+          "description": "Converts value to XRP.\nvalue – The amount of XRP.\nA string representation of XRP amount.",
+          "parameters": [
+            "value – The amount of XRP."
+          ],
+          "returns": [
+            "A string representation of XRP amount."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of an XRP currency object.\nThe dictionary representation of an XRP currency object.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of an XRP currency object."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.currencies.XRP.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "currency: str = 'XRP'",
+          "id": "xrpl.models.currencies.XRP.currency",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency",
+      "name": "IssuedCurrency",
+      "signature": "class xrpl.models.currencies.IssuedCurrency(*, currency: str = <object object>, issuer: str = <object object>)",
+      "description": "Bases: BaseModel\nSpecifies an amount in an issued currency, but without a value field. This format is used for some book order requests.\nSee https://xrpl.org/currency-formats.html#specifying-currency-amounts\nThis field is required.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThis field is required.\nConverts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.\nReturns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.",
+        "value – The amount of issued currency in the IssuedCurrencyAmount."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters.",
+        "A BaseModel object instantiated from the input.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether this BaseModel is valid.",
+        "An IssuedCurrencyAmount that represents the issued currency and theprovided value.",
+        "The dictionary representation of a BaseModel."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+      "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A BaseModel object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.to_amount",
+      "name": "to_amount",
+      "signature": "to_amount(value: str | int | float) → IssuedCurrencyAmount",
+      "description": "Converts an IssuedCurrency to an IssuedCurrencyAmount.\nvalue – The amount of issued currency in the IssuedCurrencyAmount.\nAn IssuedCurrencyAmount that represents the issued currency and theprovided value.\nprovided value.",
+      "parameters": [
+        "value – The amount of issued currency in the IssuedCurrencyAmount."
+      ],
+      "returns": [
+        "An IssuedCurrencyAmount that represents the issued currency and theprovided value."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of a BaseModel."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.IssuedCurrency.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP",
+      "name": "XRP",
+      "signature": "class xrpl.models.currencies.XRP",
+      "description": "Bases: BaseModel\nSpecifies XRP as a currency, without a value. Normally, you will not use this model as it does not specify an amount of XRP. In cases where you need to specify an amount of XRP, you will use a string. However, for some book order requests where currencies are specified without amounts, you may need to specify the use of XRP, without a value. In these cases, you will use this object.\nSee https://xrpl.org/currency-formats.html#specifying-currency-amounts\nConstruct a new XRP from a dictionary of parameters.\nvalue – The value to construct the XRP from.\nA new XRP object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nConverts value to XRP.\nvalue – The amount of XRP.\nA string representation of XRP amount.\nReturns the dictionary representation of an XRP currency object.\nThe dictionary representation of an XRP currency object.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "value – The value to construct the XRP from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.",
+        "value – The amount of XRP."
+      ],
+      "returns": [
+        "A new XRP object, constructed using the given parameters.",
+        "A BaseModel object instantiated from the input.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether this BaseModel is valid.",
+        "A string representation of XRP amount.",
+        "The dictionary representation of an XRP currency object."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+      "description": "Construct a new XRP from a dictionary of parameters.\nvalue – The value to construct the XRP from.\nA new XRP object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the XRP from."
+      ],
+      "returns": [
+        "A new XRP object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A BaseModel object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.to_amount",
+      "name": "to_amount",
+      "signature": "to_amount(value: str | int | float) → str",
+      "description": "Converts value to XRP.\nvalue – The amount of XRP.\nA string representation of XRP amount.",
+      "parameters": [
+        "value – The amount of XRP."
+      ],
+      "returns": [
+        "A string representation of XRP amount."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of an XRP currency object.\nThe dictionary representation of an XRP currency object.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of an XRP currency object."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.currencies.XRP.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

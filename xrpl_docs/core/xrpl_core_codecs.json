@@ -1,0 +1,22 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.html",
+  "section": "core",
+  "name": "XRPL Core Codecs",
+  "description": "",
+  "classes": [],
+  "methods": [],
+  "submodules": [
+    {
+      "name": "XRPL Address Codec",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.addresscodec.html"
+    },
+    {
+      "name": "XRPL Binary Codec",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.binarycodec.html"
+    },
+    {
+      "name": "XRPL Keypairs Codec",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.keypairs.html"
+    }
+  ]
+}

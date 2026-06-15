@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "XRPL Documentation Schema",
+  "description": "Schema for documentation extracted from XRPL-py library",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "URL of the page that was scraped"
+    },
+    "section": {
+      "type": "string",
+      "description": "Section identifier (account, ledger, transaction, etc.)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the module"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the module"
+    },
+    "classes": {
+      "type": "array",
+      "description": "List of classes defined in the module",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "HTML ID of the class definition"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the class"
+          },
+          "signature": {
+            "type": "string",
+            "description": "Full signature of the class"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the class"
+          },
+          "methods": {
+            "type": "array",
+            "description": "Methods defined in the class",
+            "items": {
+              "$ref": "#/definitions/method"
+            }
+          },
+          "attributes": {
+            "type": "array",
+            "description": "Attributes defined in the class",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Name of the attribute"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "HTML ID of the attribute"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Description of the attribute"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "methods": {
+      "type": "array",
+      "description": "List of methods defined in the module (not part of a class)",
+      "items": {
+        "$ref": "#/definitions/method"
+      }
+    },
+    "submodules": {
+      "type": "array",
+      "description": "List of submodules",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the submodule"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL of the submodule"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "method": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "HTML ID of the method definition"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the method"
+        },
+        "signature": {
+          "type": "string",
+          "description": "Full signature of the method"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the method"
+        },
+        "parameters": {
+          "type": "array",
+          "description": "Parameters of the method",
+          "items": {
+            "type": "string"
+          }
+        },
+        "returns": {
+          "type": "array",
+          "description": "Return values of the method",
+          "items": {
+            "type": "string"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "description": "Examples of using the method",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

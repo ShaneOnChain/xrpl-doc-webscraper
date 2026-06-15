@@ -1,0 +1,30 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.html",
+  "section": "asyncio",
+  "name": "Async Support",
+  "description": "",
+  "classes": [],
+  "methods": [],
+  "submodules": [
+    {
+      "name": "Account Methods",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.account.html"
+    },
+    {
+      "name": "Ledger Methods",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.ledger.html"
+    },
+    {
+      "name": "Transaction Methods",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.transaction.html"
+    },
+    {
+      "name": "Wallet Methods",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.wallet.html"
+    },
+    {
+      "name": "Async Network Clients",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.clients.html"
+    }
+  ]
+}

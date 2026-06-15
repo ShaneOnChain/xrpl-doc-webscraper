@@ -1,0 +1,259 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.wallet.html",
+  "section": "wallet",
+  "name": "Wallet Methods",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.wallet.Wallet",
+      "name": "Wallet",
+      "signature": "class xrpl.wallet.Wallet(public_key: str, private_key: str, *, master_address: str | None = None, seed: str | None = None, algorithm: CryptoAlgorithm | None = None)",
+      "description": "Bases: object\nThe cryptographic keys needed to control an XRP Ledger account. See Cryptographic Keys for details.\nThe XRPL address that publicly identifies this wallet, as a base58 string. This is the same value as the classic_address.\nThe algorithm that is used to convert the seed into its public/private keypair.\nclassic_address is the same as address. It is called classic_address to differentiate it from the x-address standard, which encodes the network, destination tag, and XRPL address into a single value. It’s also a base58 string.\nGenerates a new seed and Wallet.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given seed.\nGenerates a new Wallet from entropy (hexadecimal string of random numbers).\nentropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given entropy.\nXRPLException – If passed in entropy is not a bytestring.\nGenerates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.\nGenerates a new Wallet from secret numbers.\nsecret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.\nalgorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022).\nThe wallet that is generated from the given secret numbers.\nXRPLException – If the number of secret numbers is not 8. If the length of any secret number is not 6. If the checksum of any secret number is invalid.\nGenerates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.\nReturns the X-Address of the Wallet’s account.\ntag – The destination tag of the address. Defaults to None.\nis_test – Whether the address corresponds to an address on the test network. Defaults to False.\nThe X-Address of the Wallet’s account.\nThe private key that is used to create signatures, as a hexadecimal string. MUST be kept secret!\nThe public key that is used to identify this wallet’s signatures, as a hexadecimal string.",
+      "methods": [
+        {
+          "id": "xrpl.wallet.Wallet.create",
+          "name": "create",
+          "signature": "classmethod create(algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+          "description": "Generates a new seed and Wallet.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given seed.",
+          "parameters": [
+            "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+          ],
+          "returns": [
+            "The wallet that is generated from the given seed."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.wallet.Wallet.from_entropy",
+          "name": "from_entropy",
+          "signature": "classmethod from_entropy(entropy: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+          "description": "Generates a new Wallet from entropy (hexadecimal string of random numbers).\nentropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given entropy.\nXRPLException – If passed in entropy is not a bytestring.",
+          "parameters": [
+            "entropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.",
+            "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+            "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+          ],
+          "returns": [
+            "The wallet that is generated from the given entropy."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.wallet.Wallet.from_secret",
+          "name": "from_secret",
+          "signature": "classmethod from_secret(seed: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+          "description": "Generates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.",
+          "parameters": [
+            "seed – The seed (secret) used to derive the account keys.",
+            "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+            "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+          ],
+          "returns": [
+            "The wallet that is generated from the given secret."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.wallet.Wallet.from_secret_numbers",
+          "name": "from_secret_numbers",
+          "signature": "classmethod from_secret_numbers(secret_numbers: List[str] | str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.SECP256K1) → Self",
+          "description": "Generates a new Wallet from secret numbers.\nsecret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.\nalgorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022).\nThe wallet that is generated from the given secret numbers.\nXRPLException – If the number of secret numbers is not 8. If the length of any secret number is not 6. If the checksum of any secret number is invalid.",
+          "parameters": [
+            "secret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.",
+            "master_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.",
+            "algorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022)."
+          ],
+          "returns": [
+            "The wallet that is generated from the given secret numbers."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.wallet.Wallet.from_seed",
+          "name": "from_seed",
+          "signature": "classmethod from_seed(seed: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+          "description": "Generates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.",
+          "parameters": [
+            "seed – The seed (secret) used to derive the account keys.",
+            "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+            "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+          ],
+          "returns": [
+            "The wallet that is generated from the given secret."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.wallet.Wallet.get_xaddress",
+          "name": "get_xaddress",
+          "signature": "get_xaddress(*, tag: int | None = None, is_test: bool = False) → str",
+          "description": "Returns the X-Address of the Wallet’s account.\ntag – The destination tag of the address. Defaults to None.\nis_test – Whether the address corresponds to an address on the test network. Defaults to False.\nThe X-Address of the Wallet’s account.",
+          "parameters": [
+            "tag – The destination tag of the address. Defaults to None.",
+            "is_test – Whether the address corresponds to an address on the test network. Defaults to False."
+          ],
+          "returns": [
+            "The X-Address of the Wallet’s account."
+          ],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "algorithm",
+          "id": "xrpl.wallet.Wallet.algorithm",
+          "description": "The algorithm that is used to convert the seed into its public/private keypair."
+        },
+        {
+          "name": "private_key",
+          "id": "xrpl.wallet.Wallet.private_key",
+          "description": "The private key that is used to create signatures, as a hexadecimal string. MUST be kept secret!"
+        },
+        {
+          "name": "public_key",
+          "id": "xrpl.wallet.Wallet.public_key",
+          "description": "The public key that is used to identify this wallet’s signatures, as a hexadecimal string."
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.wallet.Wallet",
+      "name": "Wallet",
+      "signature": "class xrpl.wallet.Wallet(public_key: str, private_key: str, *, master_address: str | None = None, seed: str | None = None, algorithm: CryptoAlgorithm | None = None)",
+      "description": "Bases: object\nThe cryptographic keys needed to control an XRP Ledger account. See Cryptographic Keys for details.\nThe XRPL address that publicly identifies this wallet, as a base58 string. This is the same value as the classic_address.\nThe algorithm that is used to convert the seed into its public/private keypair.\nclassic_address is the same as address. It is called classic_address to differentiate it from the x-address standard, which encodes the network, destination tag, and XRPL address into a single value. It’s also a base58 string.\nGenerates a new seed and Wallet.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given seed.\nGenerates a new Wallet from entropy (hexadecimal string of random numbers).\nentropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given entropy.\nXRPLException – If passed in entropy is not a bytestring.\nGenerates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.\nGenerates a new Wallet from secret numbers.\nsecret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.\nalgorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022).\nThe wallet that is generated from the given secret numbers.\nXRPLException – If the number of secret numbers is not 8. If the length of any secret number is not 6. If the checksum of any secret number is invalid.\nGenerates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.\nReturns the X-Address of the Wallet’s account.\ntag – The destination tag of the address. Defaults to None.\nis_test – Whether the address corresponds to an address on the test network. Defaults to False.\nThe X-Address of the Wallet’s account.\nThe private key that is used to create signatures, as a hexadecimal string. MUST be kept secret!\nThe public key that is used to identify this wallet’s signatures, as a hexadecimal string.",
+      "parameters": [
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.",
+        "entropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.",
+        "seed – The seed (secret) used to derive the account keys.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.",
+        "secret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.",
+        "algorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022).",
+        "seed – The seed (secret) used to derive the account keys.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.",
+        "tag – The destination tag of the address. Defaults to None.",
+        "is_test – Whether the address corresponds to an address on the test network. Defaults to False."
+      ],
+      "returns": [
+        "The wallet that is generated from the given seed.",
+        "The wallet that is generated from the given entropy.",
+        "The wallet that is generated from the given secret.",
+        "The wallet that is generated from the given secret numbers.",
+        "The wallet that is generated from the given secret.",
+        "The X-Address of the Wallet’s account."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.create",
+      "name": "create",
+      "signature": "classmethod create(algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+      "description": "Generates a new seed and Wallet.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given seed.",
+      "parameters": [
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+      ],
+      "returns": [
+        "The wallet that is generated from the given seed."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.from_entropy",
+      "name": "from_entropy",
+      "signature": "classmethod from_entropy(entropy: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+      "description": "Generates a new Wallet from entropy (hexadecimal string of random numbers).\nentropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given entropy.\nXRPLException – If passed in entropy is not a bytestring.",
+      "parameters": [
+        "entropy – A hexadecimal string of random numbers to generate a seed used to derive a wallet.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+      ],
+      "returns": [
+        "The wallet that is generated from the given entropy."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.from_secret",
+      "name": "from_secret",
+      "signature": "classmethod from_secret(seed: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+      "description": "Generates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.",
+      "parameters": [
+        "seed – The seed (secret) used to derive the account keys.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+      ],
+      "returns": [
+        "The wallet that is generated from the given secret."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.from_secret_numbers",
+      "name": "from_secret_numbers",
+      "signature": "classmethod from_secret_numbers(secret_numbers: List[str] | str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.SECP256K1) → Self",
+      "description": "Generates a new Wallet from secret numbers.\nsecret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.\nmaster_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.\nalgorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022).\nThe wallet that is generated from the given secret numbers.\nXRPLException – If the number of secret numbers is not 8. If the length of any secret number is not 6. If the checksum of any secret number is invalid.",
+      "parameters": [
+        "secret_numbers – A string (whitespace delimited) or string array consisting of 8 times 6 numbers used to derive a wallet.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. It must be the master address of the account. The default is None.",
+        "algorithm – The digital signature algorithm to generate an address for. The default is SECP256K1 (XUMM standard as of December 2022)."
+      ],
+      "returns": [
+        "The wallet that is generated from the given secret numbers."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.from_seed",
+      "name": "from_seed",
+      "signature": "classmethod from_seed(seed: str, *, master_address: str | None = None, algorithm: CryptoAlgorithm = CryptoAlgorithm.ED25519) → Self",
+      "description": "Generates a new Wallet from seed (secret).\nseed – The seed (secret) used to derive the account keys.\nmaster_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.\nalgorithm – The key-generation algorithm to use when generating the seed. The default is ED25519.\nThe wallet that is generated from the given secret.",
+      "parameters": [
+        "seed – The seed (secret) used to derive the account keys.",
+        "master_address – Include if a Wallet uses a Regular Key Pair. This sets the address that this wallet corresponds to. The default is None.",
+        "algorithm – The key-generation algorithm to use when generating the seed. The default is ED25519."
+      ],
+      "returns": [
+        "The wallet that is generated from the given secret."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.Wallet.get_xaddress",
+      "name": "get_xaddress",
+      "signature": "get_xaddress(*, tag: int | None = None, is_test: bool = False) → str",
+      "description": "Returns the X-Address of the Wallet’s account.\ntag – The destination tag of the address. Defaults to None.\nis_test – Whether the address corresponds to an address on the test network. Defaults to False.\nThe X-Address of the Wallet’s account.",
+      "parameters": [
+        "tag – The destination tag of the address. Defaults to None.",
+        "is_test – Whether the address corresponds to an address on the test network. Defaults to False."
+      ],
+      "returns": [
+        "The X-Address of the Wallet’s account."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.wallet.generate_faucet_wallet",
+      "name": "generate_faucet_wallet",
+      "signature": "xrpl.wallet.generate_faucet_wallet(client: SyncClient, wallet: Wallet | None = None, debug: bool = False, faucet_host: str | None = None, usage_context: str | None = None) → Wallet",
+      "description": "Generates a random wallet and funds it using the XRPL Testnet Faucet.\nclient – the network client used to make network calls.\nwallet – the wallet to fund. If omitted or None, a new wallet is created.\ndebug – Whether to print debug information as it creates the wallet.\nfaucet_host – A custom host to use for funding a wallet. In environments other than devnet and testnet, this parameter is required.\nusage_context – The intended use case for the funding request (for example, testing). This information will be included in json body of the HTTP request to the faucet.\nA Wallet on the testnet that contains some amount of XRP.\nXRPLFaucetException – if an address could not be funded with the faucet.\nXRPLRequestFailureException – if a request to the ledger fails.\nrequests.exceptions.HTTPError – if the request to the faucet fails.",
+      "parameters": [
+        "client – the network client used to make network calls.",
+        "wallet – the wallet to fund. If omitted or None, a new wallet is created.",
+        "debug – Whether to print debug information as it creates the wallet.",
+        "faucet_host – A custom host to use for funding a wallet. In environments other than devnet and testnet, this parameter is required.",
+        "usage_context – The intended use case for the funding request (for example, testing). This information will be included in json body of the HTTP request to the faucet."
+      ],
+      "returns": [
+        "A Wallet on the testnet that contains some amount of XRP."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

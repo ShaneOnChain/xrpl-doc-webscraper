@@ -1,0 +1,148 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.transaction.html",
+  "section": "transaction",
+  "name": "Transaction Methods",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.transaction.autofill",
+      "name": "autofill",
+      "signature": "xrpl.transaction.autofill(transaction: Transaction, client: SyncClient, signers_count: int | None = None) → Transaction",
+      "description": "Autofills fields in a transaction. This will set sequence, fee, and last_ledger_sequence according to the current state of the server this Client is connected to. It also converts all X-Addresses to classic addresses.\ntransaction – the transaction to be signed.\nclient – a network client.\nsigners_count – the expected number of signers for this transaction. Only used for multisigned transactions.\nThe autofilled transaction.",
+      "parameters": [
+        "transaction – the transaction to be signed.",
+        "client – a network client.",
+        "signers_count – the expected number of signers for this transaction. Only used for multisigned transactions."
+      ],
+      "returns": [
+        "The autofilled transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.autofill_and_sign",
+      "name": "autofill_and_sign",
+      "signature": "xrpl.transaction.autofill_and_sign(transaction: Transaction, client: SyncClient, wallet: Wallet, check_fee: bool = True) → Transaction",
+      "description": "Signs a transaction locally, without trusting external rippled nodes. Autofills relevant fields.\ntransaction – the transaction to be signed.\nclient – a network client.\nwallet – the wallet with which to sign the transaction.\ncheck_fee – whether to check if the fee is higher than the expected transaction type fee. Defaults to True.\nThe signed transaction.",
+      "parameters": [
+        "transaction – the transaction to be signed.",
+        "client – a network client.",
+        "wallet – the wallet with which to sign the transaction.",
+        "check_fee – whether to check if the fee is higher than the expected transaction type fee. Defaults to True."
+      ],
+      "returns": [
+        "The signed transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.multisign",
+      "name": "multisign",
+      "signature": "xrpl.transaction.multisign(transaction: Transaction, tx_list: List[Transaction]) → Transaction",
+      "description": "Takes several transactions with Signer fields and creates a single transaction with all Signers that then gets signed and returned.\ntransaction – the transaction to be multisigned.\ntx_list – a list of signed transactions to combine into a single multisigned transaction.\nThe multisigned transaction.",
+      "parameters": [
+        "transaction – the transaction to be multisigned.",
+        "tx_list – a list of signed transactions to combine into a single multisigned transaction."
+      ],
+      "returns": [
+        "The multisigned transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.sign",
+      "name": "sign",
+      "signature": "xrpl.transaction.sign(transaction: Transaction, wallet: Wallet, multisign: bool = False) → Transaction",
+      "description": "Signs a transaction locally, without trusting external rippled nodes.\ntransaction – the transaction to be signed.\nwallet – the wallet with which to sign the transaction.\nmultisign – whether to sign the transaction for a multisignature transaction.\nThe signed transaction blob.",
+      "parameters": [
+        "transaction – the transaction to be signed.",
+        "wallet – the wallet with which to sign the transaction.",
+        "multisign – whether to sign the transaction for a multisignature transaction."
+      ],
+      "returns": [
+        "The signed transaction blob."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.sign_and_submit",
+      "name": "sign_and_submit",
+      "signature": "xrpl.transaction.sign_and_submit(transaction: Transaction, client: SyncClient, wallet: Wallet, autofill: bool = True, check_fee: bool = True) → Response",
+      "description": "Signs a transaction (locally, without trusting external rippled nodes) and submits it to the XRPL.\ntransaction – the transaction to be signed and submitted.\nclient – the network client with which to submit the transaction.\nwallet – the wallet with which to sign the transaction.\nautofill – whether to autofill the relevant fields. Defaults to True.\ncheck_fee – whether to check if the fee is higher than the expected transaction type fee. Defaults to True.\nThe response from the ledger.",
+      "parameters": [
+        "transaction – the transaction to be signed and submitted.",
+        "client – the network client with which to submit the transaction.",
+        "wallet – the wallet with which to sign the transaction.",
+        "autofill – whether to autofill the relevant fields. Defaults to True.",
+        "check_fee – whether to check if the fee is higher than the expected transaction type fee. Defaults to True."
+      ],
+      "returns": [
+        "The response from the ledger."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.simulate",
+      "name": "simulate",
+      "signature": "xrpl.transaction.simulate(transaction: Transaction, client: SyncClient, *, binary: bool = False) → Response",
+      "description": "Simulates a transaction without actually submitting it to the network.\ntransaction – The transaction to simulate.\nclient – The network client with which to submit the transaction.\nbinary – Whether the return data should be encoded in the XRPL’s binary format. Defaults to False.\nXRPLRequestFailureException – If the transaction fails in the simulated scenario.\nThe response from the ledger.",
+      "parameters": [
+        "transaction – The transaction to simulate.",
+        "client – The network client with which to submit the transaction.",
+        "binary – Whether the return data should be encoded in the XRPL’s binary format. Defaults to False."
+      ],
+      "returns": [
+        "The response from the ledger."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.submit",
+      "name": "submit",
+      "signature": "xrpl.transaction.submit(transaction: Transaction, client: SyncClient, *, fail_hard: bool = False) → Response",
+      "description": "Submits a transaction to the ledger.\ntransaction – the Transaction to be submitted.\nclient – the network client with which to submit the transaction.\nfail_hard – an optional boolean. If True, and the transaction fails for the initial server, do not retry or relay the transaction to other servers. Defaults to False.\nThe response from the ledger.\nXRPLRequestFailureException – if the rippled API call fails.",
+      "parameters": [
+        "transaction – the Transaction to be submitted.",
+        "client – the network client with which to submit the transaction.",
+        "fail_hard – an optional boolean. If True, and the transaction fails for the initial server, do not retry or relay the transaction to other servers. Defaults to False."
+      ],
+      "returns": [
+        "The response from the ledger."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.submit_and_wait",
+      "name": "submit_and_wait",
+      "signature": "xrpl.transaction.submit_and_wait(transaction: Transaction, client: SyncClient, wallet: Wallet | None = None, *, check_fee: bool = True, autofill: bool = True, fail_hard: bool = False) → Response",
+      "description": "Signs a transaction locally, without trusting external rippled nodes (only if the input transaction is unsigned; otherwise, proceeds to the next steps), submits, and verifies that it has been included in a validated ledger (or has errored /will not be included for some reason). See Reliable Transaction Submission\ntransaction – the signed/unsigned transaction (or transaction blob) to be submitted.\nclient – the network client with which to submit the transaction.\nwallet – an optional wallet with which to sign the transaction. This is only needed if the transaction is unsigned.\ncheck_fee – an optional bolean indicating whether to check if the fee is higher than the expected transaction type fee. Defaults to True.\nautofill – an optional boolean indicating whether to autofill the transaction. Defaults to True.\nfail_hard – an optional boolean. If True, and the transaction fails for the initial server, do not retry or relay the transaction to other servers. Defaults to False.\nThe response from the ledger.",
+      "parameters": [
+        "transaction – the signed/unsigned transaction (or transaction blob) to be submitted.",
+        "client – the network client with which to submit the transaction.",
+        "wallet – an optional wallet with which to sign the transaction. This is only needed if the transaction is unsigned.",
+        "check_fee – an optional bolean indicating whether to check if the fee is higher than the expected transaction type fee. Defaults to True.",
+        "autofill – an optional boolean indicating whether to autofill the transaction. Defaults to True.",
+        "fail_hard – an optional boolean. If True, and the transaction fails for the initial server, do not retry or relay the transaction to other servers. Defaults to False."
+      ],
+      "returns": [
+        "The response from the ledger."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.transaction.transaction_json_to_binary_codec_form",
+      "name": "transaction_json_to_binary_codec_form",
+      "signature": "xrpl.transaction.transaction_json_to_binary_codec_form(dictionary: Dict[str, Any]) → Dict[str, Any]",
+      "description": "Returns a new dictionary in which the keys have been formatted as CamelCase and standardized to be serialized by the binary codec.\ndictionary – The dictionary to be reformatted.\nA new dictionary object that has been reformatted.",
+      "parameters": [
+        "dictionary – The dictionary to be reformatted."
+      ],
+      "returns": [
+        "A new dictionary object that has been reformatted."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

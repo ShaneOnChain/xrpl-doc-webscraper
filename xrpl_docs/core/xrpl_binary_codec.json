@@ -1,0 +1,76 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.core.binarycodec.html",
+  "section": "core",
+  "name": "XRPL Binary Codec",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.core.binarycodec.decode",
+      "name": "decode",
+      "signature": "xrpl.core.binarycodec.decode(buffer: str) → Dict[str, Any]",
+      "description": "Decode a transaction from binary format to a JSON-like dictionary representation.\nbuffer – The encoded transaction binary, as a hexadecimal string.\nA JSON-like dictionary representation of the transaction.",
+      "parameters": [
+        "buffer – The encoded transaction binary, as a hexadecimal string."
+      ],
+      "returns": [
+        "A JSON-like dictionary representation of the transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.binarycodec.encode",
+      "name": "encode",
+      "signature": "xrpl.core.binarycodec.encode(json: Dict[str, Any]) → str",
+      "description": "Encode a transaction or other object into the canonical binary format.\njson – A JSON-like dictionary representation of an object.\nThe binary-encoded object, as a hexadecimal string.",
+      "parameters": [
+        "json – A JSON-like dictionary representation of an object."
+      ],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.binarycodec.encode_for_multisigning",
+      "name": "encode_for_multisigning",
+      "signature": "xrpl.core.binarycodec.encode_for_multisigning(json: Dict[str, Any], signing_account: str) → str",
+      "description": "Encode a transaction into binary format in preparation for providing one signature towards a multi-signed transaction. (Only encodes fields that are intended to be signed.)\njson – A JSON-like dictionary representation of a transaction.\nsigning_account – The address of the signer who’ll provide the signature.\nA hex string of the encoded transaction.",
+      "parameters": [
+        "json – A JSON-like dictionary representation of a transaction.",
+        "signing_account – The address of the signer who’ll provide the signature."
+      ],
+      "returns": [
+        "A hex string of the encoded transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.binarycodec.encode_for_signing",
+      "name": "encode_for_signing",
+      "signature": "xrpl.core.binarycodec.encode_for_signing(json: Dict[str, Any]) → str",
+      "description": "Encode a transaction into binary format in preparation for signing. (Only encodes fields that are intended to be signed.)\njson – A JSON-like dictionary representation of a transaction.\nThe binary-encoded transaction, ready to be signed.",
+      "parameters": [
+        "json – A JSON-like dictionary representation of a transaction."
+      ],
+      "returns": [
+        "The binary-encoded transaction, ready to be signed."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.core.binarycodec.encode_for_signing_claim",
+      "name": "encode_for_signing_claim",
+      "signature": "xrpl.core.binarycodec.encode_for_signing_claim(json: Dict[str, Any]) → str",
+      "description": "Encode a payment channel Claim to be signed.\njson – A JSON-like dictionary representation of a Claim.\nThe binary-encoded claim, ready to be signed.",
+      "parameters": [
+        "json – A JSON-like dictionary representation of a Claim."
+      ],
+      "returns": [
+        "The binary-encoded claim, ready to be signed."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

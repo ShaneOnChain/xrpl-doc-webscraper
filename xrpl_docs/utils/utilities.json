@@ -1,0 +1,192 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.utils.html",
+  "section": "utils",
+  "name": "Utilities",
+  "description": "",
+  "classes": [],
+  "methods": [
+    {
+      "id": "xrpl.utils.datetime_to_ripple_time",
+      "name": "datetime_to_ripple_time",
+      "signature": "xrpl.utils.datetime_to_ripple_time(dt: datetime) → int",
+      "description": "Convert from a datetime object to an XRP Ledger ‘Ripple Epoch’ time.\ndt – The datetime to convert\nThe equivalent time in whole seconds since the Ripple Epoch of 2001-01-01T00:00Z\nXRPLTimeRangeException – if the time is outside the range that can be represented in Ripple Epoch time",
+      "parameters": [
+        "dt – The datetime to convert"
+      ],
+      "returns": [
+        "The equivalent time in whole seconds since the Ripple Epoch of 2001-01-01T00:00Z"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.drops_to_xrp",
+      "name": "drops_to_xrp",
+      "signature": "xrpl.utils.drops_to_xrp(drops: str) → Decimal",
+      "description": "Convert from drops to decimal XRP.\ndrops – String representing indivisible drops of XRP\nDecimal representation of the same amount of XRP\nTypeError – if drops not given as a string\nXRPRangeException – if the given number of drops is invalid",
+      "parameters": [
+        "drops – String representing indivisible drops of XRP"
+      ],
+      "returns": [
+        "Decimal representation of the same amount of XRP"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.get_balance_changes",
+      "name": "get_balance_changes",
+      "signature": "xrpl.utils.get_balance_changes(metadata: TransactionMetadata) → List[AccountBalances]",
+      "description": "Parse all balance changes from a transaction’s metadata. Does not include MPT balance.\nmetadata – Transactions metadata.\nAll balance changes caused by a transaction. The balance changes are grouped by the affected account addresses.",
+      "parameters": [
+        "metadata – Transactions metadata."
+      ],
+      "returns": [
+        "All balance changes caused by a transaction. The balance changes are grouped by the affected account addresses."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.get_final_balances",
+      "name": "get_final_balances",
+      "signature": "xrpl.utils.get_final_balances(metadata: TransactionMetadata) → List[AccountBalances]",
+      "description": "Parse all final balances from a transaction’s metadata.\nmetadata – Transactions metadata.\nAll final balances caused by a transaction. The final balances are grouped by the affected account addresses.",
+      "parameters": [
+        "metadata – Transactions metadata."
+      ],
+      "returns": [
+        "All final balances caused by a transaction. The final balances are grouped by the affected account addresses."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.get_nftoken_id",
+      "name": "get_nftoken_id",
+      "signature": "xrpl.utils.get_nftoken_id(meta: TransactionMetadata) → str | None",
+      "description": "Gets the NFTokenID for an NFT recently minted with NFTokenMint.\nmeta – Metadata from the response to submitting an NFTokenMint transaction.\nThe newly minted NFToken’s NFTokenID. None if there is no NFTokenID that was minted.\nTypeError – if given something other than metadata (e.g. the full transaction response).",
+      "parameters": [
+        "meta – Metadata from the response to submitting an NFTokenMint transaction."
+      ],
+      "returns": [
+        "The newly minted NFToken’s NFTokenID. None if there is no NFTokenID that was minted."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.get_order_book_changes",
+      "name": "get_order_book_changes",
+      "signature": "xrpl.utils.get_order_book_changes(metadata: TransactionMetadata) → List[AccountOfferChanges]",
+      "description": "Parse all order book changes from a transaction’s metadata.\nmetadata – Transactions metadata.\nAll offer changes caused by the transaction. The offer changes are grouped by their owner accounts.",
+      "parameters": [
+        "metadata – Transactions metadata."
+      ],
+      "returns": [
+        "All offer changes caused by the transaction. The offer changes are grouped by their owner accounts."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.get_xchain_claim_id",
+      "name": "get_xchain_claim_id",
+      "signature": "xrpl.utils.get_xchain_claim_id(meta: TransactionMetadata) → str",
+      "description": "Gets the XChainClaimID from a recently-submitted XChainCreateClaimID transaction.\nmeta – Metadata from the response to submitting an XChainCreateClaimID transaction.\nThe newly created XChainClaimID.\nTypeError – if given something other than metadata (e.g. the full transaction response).",
+      "parameters": [
+        "meta – Metadata from the response to submitting an XChainCreateClaimID transaction."
+      ],
+      "returns": [
+        "The newly created XChainClaimID."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.hex_to_str",
+      "name": "hex_to_str",
+      "signature": "xrpl.utils.hex_to_str(input: str) → str",
+      "description": "Convert a hex string into a human-readable string. XRPL uses hex strings as inputs in fields like domain in the AccountSet transaction.\ninput – hex-encoded string to convert\nInput encoded as a human-readable string.",
+      "parameters": [
+        "input – hex-encoded string to convert"
+      ],
+      "returns": [
+        "Input encoded as a human-readable string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.parse_nftoken_id",
+      "name": "parse_nftoken_id",
+      "signature": "xrpl.utils.parse_nftoken_id(nft_id: str) → NFTokenID",
+      "description": "Parse an NFTokenID into the information it is encoding.\nExample decoding:\n000B 0539 C35B55AA096BA6D87A6E6C965A6534150DC56E5E 12C5D09E 0000000C +— +— +————————————— +——- +——- | | | | | | | | | `—> Sequence: 12 | | | | | | | `—> Scrambled Taxon: 314,953,886 | | | Unscrambled Taxon: 1337 | | | | | `—> Issuer: rJoxBSzpXhPtAuqFmqxQtGKjA13jUJWthE | | | `—> TransferFee: 1337.0 bps or 13.37% | `—> Flags: 11 -> lsfBurnable, lsfOnlyXRP and lsfTransferable\nnft_id – A hex string which identifies an NFToken on the ledger.\nXRPLException – when given an invalid Token ID as nft_id.\nA decoded nft TokenID with all information encoded within\n# noqa:E501",
+      "parameters": [
+        "nft_id – A hex string which identifies an NFToken on the ledger."
+      ],
+      "returns": [
+        "A decoded nft TokenID with all information encoded within"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.posix_to_ripple_time",
+      "name": "posix_to_ripple_time",
+      "signature": "xrpl.utils.posix_to_ripple_time(timestamp: int | float) → int",
+      "description": "Convert from a POSIX-like timestamp such as one returned by time.time() to an XRP Ledger ‘Ripple Epoch’ time.\ntimestamp – An integer or floating-point timestamp such as one returned by time.time().\nThe equivalent time in whole seconds since the Ripple Epoch of 2001-01-01T00:00Z\nXRPLTimeRangeException – if the time is outside the range that can be represented in Ripple Epoch time",
+      "parameters": [
+        "timestamp – An integer or floating-point timestamp such as one returned by time.time()."
+      ],
+      "returns": [
+        "The equivalent time in whole seconds since the Ripple Epoch of 2001-01-01T00:00Z"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.ripple_time_to_datetime",
+      "name": "ripple_time_to_datetime",
+      "signature": "xrpl.utils.ripple_time_to_datetime(ripple_time: int) → datetime",
+      "description": "Convert from XRP Ledger ‘Ripple Epoch’ time to a UTC datetime object.\nripple_time – Whole seconds since the Ripple Epoch of 2001-01-01T00:00Z\nThe equivalent time as a datetime instance.\nXRPLTimeRangeException – if the given ripple_time is not valid",
+      "parameters": [
+        "ripple_time – Whole seconds since the Ripple Epoch of 2001-01-01T00:00Z"
+      ],
+      "returns": [
+        "The equivalent time as a datetime instance."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.ripple_time_to_posix",
+      "name": "ripple_time_to_posix",
+      "signature": "xrpl.utils.ripple_time_to_posix(ripple_time: int) → int",
+      "description": "Convert from XRP Ledger ‘Ripple Epoch’ time to a POSIX-like integer timestamp.\nripple_time – A timestamp as the number of whole seconds since the Ripple Epoch of 2001-01-01T00:00Z\nThe equivalent time in whole seconds since the UNIX epoch of 1970-01-01T00:00Z\nXRPLTimeRangeException – if the given ripple_time is not valid",
+      "parameters": [
+        "ripple_time – A timestamp as the number of whole seconds since the Ripple Epoch of 2001-01-01T00:00Z"
+      ],
+      "returns": [
+        "The equivalent time in whole seconds since the UNIX epoch of 1970-01-01T00:00Z"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.str_to_hex",
+      "name": "str_to_hex",
+      "signature": "xrpl.utils.str_to_hex(input: str) → str",
+      "description": "Convert a UTF-8-encoded string into hexadecimal encoding. XRPL uses hex strings as inputs in fields like domain in the AccountSet transaction.\ninput – UTF-8-encoded string to convert\nInput encoded as a hex string.",
+      "parameters": [
+        "input – UTF-8-encoded string to convert"
+      ],
+      "returns": [
+        "Input encoded as a hex string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.utils.xrp_to_drops",
+      "name": "xrp_to_drops",
+      "signature": "xrpl.utils.xrp_to_drops(xrp: int | float | Decimal) → str",
+      "description": "Convert a numeric XRP amount to drops of XRP.\nxrp – Numeric representation of whole XRP\nEquivalent amount in drops of XRP\nTypeError – if xrp is given as a string\nXRPRangeException – if the given amount of XRP is invalid",
+      "parameters": [
+        "xrp – Numeric representation of whole XRP"
+      ],
+      "returns": [
+        "Equivalent amount in drops of XRP"
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

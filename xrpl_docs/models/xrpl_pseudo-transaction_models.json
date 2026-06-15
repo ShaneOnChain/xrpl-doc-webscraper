@@ -1,0 +1,1710 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.pseudo_transactions.html",
+  "section": "models",
+  "name": "XRPL Pseudo-Transaction Models",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment",
+      "name": "EnableAmendment",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendment(*, account_txn_id: Optional[str] = None, flags: int | ~typing.List[int] = 0, last_ledger_sequence: Optional[int] = None, memos: Optional[List[Memo]] = None, signers: Optional[List[Signer]] = None, ticket_sequence: Optional[int] = None, network_id: Optional[int] = None, amendment: str = <object object>, ledger_sequence: int = <object object>, tf_got_majority: bool | None = None, tf_lost_majority: bool | None = None)",
+      "description": "Bases: PseudoTransaction\nAn EnableAmendment pseudo-transaction marks a change in status of an amendment to the XRP Ledger protocol, including:\nA proposed amendment gained supermajority approval from validators.\nA proposed amendment lost supermajority approval.\nA proposed amendment has been enabled.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nA unique identifier for the amendment. This is not intended to be a human-readable name. See Amendments for a list of known amendments. This field is required.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nThe ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nSupport for this amendment increased to at least 80% of trusted validators starting with this ledger version.\nSupport for this amendment decreased to less than 80% of trusted validators starting with this ledger version.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.blob",
+          "name": "blob",
+          "signature": "blob() → str",
+          "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+          "parameters": [],
+          "returns": [
+            "The binary-encoded object, as a hexadecimal string."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_blob",
+          "name": "from_blob",
+          "signature": "static from_blob(tx_blob: str) → Transaction",
+          "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+          "parameters": [
+            "tx_blob – the tx blob to decode."
+          ],
+          "returns": [
+            "The formatted transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+          "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the Transaction from."
+          ],
+          "returns": [
+            "A new Transaction object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A Transaction object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.get_hash",
+          "name": "get_hash",
+          "signature": "get_hash() → str",
+          "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+          "parameters": [],
+          "returns": [
+            "The hash of the Transaction object."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.get_transaction_type",
+          "name": "get_transaction_type",
+          "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+          "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+          "parameters": [
+            "transaction_type – The String name of the Transaction object."
+          ],
+          "returns": [
+            "The transaction class with the given name."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.has_flag",
+          "name": "has_flag",
+          "signature": "has_flag(flag: int) → bool",
+          "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+          "parameters": [
+            "flag – The given flag value for which the function will determine whether it is set."
+          ],
+          "returns": [
+            "Whether the transaction has the given flag value set."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_signed",
+          "name": "is_signed",
+          "signature": "is_signed() → bool",
+          "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+          "parameters": [],
+          "returns": [
+            "Whether the transaction has been signed"
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of a Transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.to_xrpl",
+          "name": "to_xrpl",
+          "signature": "to_xrpl() → Dict[str, Any]",
+          "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+          "parameters": [],
+          "returns": [
+            "A JSON-like dictionary in the JSON format used by the binary codec."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "account: str",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.account",
+          "description": "The address of the sender of the transaction. Required."
+        },
+        {
+          "name": "account_txn_id: str | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.account_txn_id",
+          "description": "A hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details."
+        },
+        {
+          "name": "amendment: str",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.amendment",
+          "description": "A unique identifier for the amendment. This is not intended to be a human-readable name. See Amendments for a list of known amendments. This field is required."
+        },
+        {
+          "name": "fee: str = '0'",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.fee",
+          "description": "(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details."
+        },
+        {
+          "name": "flags: int | List[int] = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.flags",
+          "description": "The Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward."
+        },
+        {
+          "name": "last_ledger_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.last_ledger_sequence",
+          "description": "The highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details."
+        },
+        {
+          "name": "ledger_sequence: int",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.ledger_sequence",
+          "description": "The ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required."
+        },
+        {
+          "name": "memos: List[Memo] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.memos",
+          "description": "Additional arbitrary information attached to this transaction."
+        },
+        {
+          "name": "network_id: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.network_id",
+          "description": "The network id of the transaction."
+        },
+        {
+          "name": "sequence: int = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.sequence",
+          "description": "(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details."
+        },
+        {
+          "name": "signers: List[Signer] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.signers",
+          "description": "Signing data authorizing a multi-signed transaction. Added during multi-signing."
+        },
+        {
+          "name": "signing_pub_key: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.signing_pub_key",
+          "description": "The public key authorizing a single-signed transaction. Automatically added during signing."
+        },
+        {
+          "name": "source_tag: None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.source_tag",
+          "description": "An arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from."
+        },
+        {
+          "name": "tf_got_majority: bool | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.tf_got_majority",
+          "description": "Support for this amendment increased to at least 80% of trusted validators starting with this ledger version."
+        },
+        {
+          "name": "tf_lost_majority: bool | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.tf_lost_majority",
+          "description": "Support for this amendment decreased to less than 80% of trusted validators starting with this ledger version."
+        },
+        {
+          "name": "ticket_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.ticket_sequence",
+          "description": "The sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id."
+        },
+        {
+          "name": "transaction_type: PseudoTransactionType = 'EnableAmendment'",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.transaction_type",
+          "description": ""
+        },
+        {
+          "name": "txn_signature: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.txn_signature",
+          "description": "The cryptographic signature from the sender that authorizes this transaction. Automatically added during signing."
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag",
+      "name": "EnableAmendmentFlag",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: int, Enum\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction.\nA Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nSee EnableAmendment Flags\nSupport for this amendment increased to at least 80% of trusted validators starting with this ledger version.\nSupport for this amendment decreased to less than 80% of trusted validators starting with this ledger version.\nReturn integer ratio.\nReturn a pair of integers, whose ratio is exactly equal to the original int and with a positive denominator.\nNumber of ones in the binary representation of the absolute value of self.\nAlso known as the population count.\nNumber of bits necessary to represent self in binary.\nReturns self, the complex conjugate of any int.\nthe denominator of a rational number in lowest terms\nReturn the integer represented by the given array of bytes.\nHolds the array of bytes to convert. The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nIndicates whether two’s complement is used to represent the integer.\nthe imaginary part of a complex number\nthe numerator of a rational number in lowest terms\nthe real part of a complex number\nReturn an array of bytes representing an integer.\nLength of bytes object to use. An OverflowError is raised if the integer is not representable with the given number of bytes. Default is length 1.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nDetermines whether two’s complement is used to represent the integer. If signed is False and a negative integer is given, an OverflowError is raised.",
+      "methods": [
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.as_integer_ratio",
+          "name": "as_integer_ratio",
+          "signature": "as_integer_ratio()",
+          "description": "Return integer ratio.\nReturn a pair of integers, whose ratio is exactly equal to the original int and with a positive denominator.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.bit_count",
+          "name": "bit_count",
+          "signature": "bit_count()",
+          "description": "Number of ones in the binary representation of the absolute value of self.\nAlso known as the population count.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.bit_length",
+          "name": "bit_length",
+          "signature": "bit_length()",
+          "description": "Number of bits necessary to represent self in binary.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.conjugate",
+          "name": "conjugate",
+          "signature": "conjugate()",
+          "description": "Returns self, the complex conjugate of any int.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.from_bytes",
+          "name": "from_bytes",
+          "signature": "from_bytes(byteorder='big', *, signed=False)",
+          "description": "Return the integer represented by the given array of bytes.\nHolds the array of bytes to convert. The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nIndicates whether two’s complement is used to represent the integer.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.to_bytes",
+          "name": "to_bytes",
+          "signature": "to_bytes(length=1, byteorder='big', *, signed=False)",
+          "description": "Return an array of bytes representing an integer.\nLength of bytes object to use. An OverflowError is raised if the integer is not representable with the given number of bytes. Default is length 1.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nDetermines whether two’s complement is used to represent the integer. If signed is False and a negative integer is given, an OverflowError is raised.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "TF_GOT_MAJORITY = 65536",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.TF_GOT_MAJORITY",
+          "description": "Support for this amendment increased to at least 80% of trusted validators starting with this ledger version."
+        },
+        {
+          "name": "TF_LOST_MAJORITY = 131072",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.TF_LOST_MAJORITY",
+          "description": "Support for this amendment decreased to less than 80% of trusted validators starting with this ledger version."
+        },
+        {
+          "name": "denominator",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.denominator",
+          "description": "the denominator of a rational number in lowest terms"
+        },
+        {
+          "name": "imag",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.imag",
+          "description": "the imaginary part of a complex number"
+        },
+        {
+          "name": "numerator",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.numerator",
+          "description": "the numerator of a rational number in lowest terms"
+        },
+        {
+          "name": "real",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.real",
+          "description": "the real part of a complex number"
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface",
+      "name": "EnableAmendmentFlagInterface",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface",
+      "description": "Bases: FlagInterface\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction.\nA Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nSee EnableAmendment Flags\nCreate a new dictionary with keys from iterable and values set to value.\nReturn the value for key if key is in the dictionary, else default.\nIf the key is not found, return the default if given; otherwise, raise a KeyError.\nRemove and return a (key, value) pair as a 2-tuple.\nPairs are returned in LIFO (last-in, first-out) order. Raises KeyError if the dict is empty.\nInsert key with a value of default if key is not in the dictionary.\nReturn the value for key if key is in the dictionary, else default.\nIf E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k]",
+      "methods": [
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.clear",
+          "name": "clear",
+          "signature": "clear() → None.  Remove all items from D.",
+          "description": "",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.copy",
+          "name": "copy",
+          "signature": "copy() → a shallow copy of D",
+          "description": "",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.fromkeys",
+          "name": "fromkeys",
+          "signature": "fromkeys(value=None, /)",
+          "description": "Create a new dictionary with keys from iterable and values set to value.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.get",
+          "name": "get",
+          "signature": "get(key, default=None, /)",
+          "description": "Return the value for key if key is in the dictionary, else default.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.items",
+          "name": "items",
+          "signature": "items() → a set-like object providing a view on D's items",
+          "description": "",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.keys",
+          "name": "keys",
+          "signature": "keys() → a set-like object providing a view on D's keys",
+          "description": "",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.pop",
+          "name": "pop",
+          "signature": "pop(k[, d]) → v, remove specified key and return the corresponding value.",
+          "description": "If the key is not found, return the default if given; otherwise, raise a KeyError.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.popitem",
+          "name": "popitem",
+          "signature": "popitem()",
+          "description": "Remove and return a (key, value) pair as a 2-tuple.\nPairs are returned in LIFO (last-in, first-out) order. Raises KeyError if the dict is empty.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.setdefault",
+          "name": "setdefault",
+          "signature": "setdefault(key, default=None, /)",
+          "description": "Insert key with a value of default if key is not in the dictionary.\nReturn the value for key if key is in the dictionary, else default.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.update",
+          "name": "update",
+          "signature": "update([E, ]**F) → None.  Update D from dict/iterable E and F.",
+          "description": "If E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k]",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.values",
+          "name": "values",
+          "signature": "values() → an object providing a view on D's values",
+          "description": "",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "TF_GOT_MAJORITY: bool",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.TF_GOT_MAJORITY",
+          "description": ""
+        },
+        {
+          "name": "TF_LOST_MAJORITY: bool",
+          "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.TF_LOST_MAJORITY",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee",
+      "name": "SetFee",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.SetFee(*, account_txn_id: str | None = None, flags: Dict[str, bool] | int | List[int] = 0, last_ledger_sequence: int | None = None, memos: List[Memo] | None = None, signers: List[Signer] | None = None, ticket_sequence: int | None = None, network_id: int | None = None, base_fee: str | None = None, reference_fee_units: int | None = None, reserve_base: int | None = None, reserve_increment: int | None = None, base_fee_drops: str | None = None, reserve_base_drops: str | None = None, reserve_increment_drops: str | None = None)",
+      "description": "Bases: PseudoTransaction\nA SetFee pseudo-transaction marks a change in transaction cost or reserve requirements as a result of Fee Voting.\nThe parameters are different depending on if this is before or after the `XRPFees Amendment<https://xrpl.org/known-amendments.html#xrpfees>`_\nBefore the XRPFees Amendment which was proposed in rippled 1.10.0 base_fee, reference_fee_units, reserve_base, and reserve_increment were required fields.\nAfter the XRPFees Amendment, base_fee_drops, reserve_base_drops, and reserve_increment_drops are required fields.\nNo SetFee Pseudo Transaction should contain fields from BOTH before and after the XRPFees amendment.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nThe charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required.\nThe charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nA List of flags, or a bitwise map of flags, modifying this transaction’s behavior. See Flags Field for more details.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\nThe cost, in fee units, of the reference transaction. This field is required.\nThe base reserve, in drops. This field is required.\nThe base reserve, in drops. This field is required.\nThe incremental reserve, in drops. This field is required.\nThe incremental reserve, in drops. This field is required.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.blob",
+          "name": "blob",
+          "signature": "blob() → str",
+          "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+          "parameters": [],
+          "returns": [
+            "The binary-encoded object, as a hexadecimal string."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_blob",
+          "name": "from_blob",
+          "signature": "static from_blob(tx_blob: str) → Transaction",
+          "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+          "parameters": [
+            "tx_blob – the tx blob to decode."
+          ],
+          "returns": [
+            "The formatted transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+          "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the Transaction from."
+          ],
+          "returns": [
+            "A new Transaction object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A Transaction object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.get_hash",
+          "name": "get_hash",
+          "signature": "get_hash() → str",
+          "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+          "parameters": [],
+          "returns": [
+            "The hash of the Transaction object."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.get_transaction_type",
+          "name": "get_transaction_type",
+          "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+          "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+          "parameters": [
+            "transaction_type – The String name of the Transaction object."
+          ],
+          "returns": [
+            "The transaction class with the given name."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.has_flag",
+          "name": "has_flag",
+          "signature": "has_flag(flag: int) → bool",
+          "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+          "parameters": [
+            "flag – The given flag value for which the function will determine whether it is set."
+          ],
+          "returns": [
+            "Whether the transaction has the given flag value set."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_signed",
+          "name": "is_signed",
+          "signature": "is_signed() → bool",
+          "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+          "parameters": [],
+          "returns": [
+            "Whether the transaction has been signed"
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of a Transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.to_xrpl",
+          "name": "to_xrpl",
+          "signature": "to_xrpl() → Dict[str, Any]",
+          "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+          "parameters": [],
+          "returns": [
+            "A JSON-like dictionary in the JSON format used by the binary codec."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "account: str",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.account",
+          "description": "The address of the sender of the transaction. Required."
+        },
+        {
+          "name": "account_txn_id: str | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.account_txn_id",
+          "description": "A hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details."
+        },
+        {
+          "name": "base_fee: str | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.base_fee",
+          "description": "The charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required."
+        },
+        {
+          "name": "base_fee_drops: str | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.base_fee_drops",
+          "description": "The charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required."
+        },
+        {
+          "name": "fee: str = '0'",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.fee",
+          "description": "(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details."
+        },
+        {
+          "name": "flags: Dict[str, bool] | int | List[int] = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.flags",
+          "description": "A List of flags, or a bitwise map of flags, modifying this transaction’s behavior. See Flags Field for more details."
+        },
+        {
+          "name": "last_ledger_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.last_ledger_sequence",
+          "description": "The highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details."
+        },
+        {
+          "name": "memos: List[Memo] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.memos",
+          "description": "Additional arbitrary information attached to this transaction."
+        },
+        {
+          "name": "network_id: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.network_id",
+          "description": "The network id of the transaction."
+        },
+        {
+          "name": "reference_fee_units: int | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.reference_fee_units",
+          "description": "The cost, in fee units, of the reference transaction. This field is required."
+        },
+        {
+          "name": "reserve_base: int | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.reserve_base",
+          "description": "The base reserve, in drops. This field is required."
+        },
+        {
+          "name": "reserve_base_drops: str | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.reserve_base_drops",
+          "description": "The base reserve, in drops. This field is required."
+        },
+        {
+          "name": "reserve_increment: int | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.reserve_increment",
+          "description": "The incremental reserve, in drops. This field is required."
+        },
+        {
+          "name": "reserve_increment_drops: str | None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.reserve_increment_drops",
+          "description": "The incremental reserve, in drops. This field is required."
+        },
+        {
+          "name": "sequence: int = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.sequence",
+          "description": "(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details."
+        },
+        {
+          "name": "signers: List[Signer] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.signers",
+          "description": "Signing data authorizing a multi-signed transaction. Added during multi-signing."
+        },
+        {
+          "name": "signing_pub_key: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.signing_pub_key",
+          "description": "The public key authorizing a single-signed transaction. Automatically added during signing."
+        },
+        {
+          "name": "source_tag: None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.source_tag",
+          "description": "An arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from."
+        },
+        {
+          "name": "ticket_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.ticket_sequence",
+          "description": "The sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id."
+        },
+        {
+          "name": "transaction_type: PseudoTransactionType = 'SetFee'",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.transaction_type",
+          "description": ""
+        },
+        {
+          "name": "txn_signature: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.SetFee.txn_signature",
+          "description": "The cryptographic signature from the sender that authorizes this transaction. Automatically added during signing."
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify",
+      "name": "UNLModify",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.UNLModify(*, account_txn_id: Optional[str] = None, flags: int = 0, last_ledger_sequence: Optional[int] = None, memos: Optional[List[Memo]] = None, signers: Optional[List[Signer]] = None, ticket_sequence: Optional[int] = None, network_id: Optional[int] = None, ledger_sequence: int = <object object>, unl_modify_disabling: int = <object object>, unl_modify_validator: str = <object object>)",
+      "description": "Bases: PseudoTransaction\nA UNLModify pseudo-transaction marks a change to the Negative UNL, indicating that a trusted validator has gone offline or come back online.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nThe ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nIf 1, this change represents adding a validator to the Negative UNL. If 0, this change represents removing a validator from the Negative UNL. (No other values are allowed.) This field is required.\nThe validator to add or remove, as identified by its master public key. This field is required.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.blob",
+          "name": "blob",
+          "signature": "blob() → str",
+          "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+          "parameters": [],
+          "returns": [
+            "The binary-encoded object, as a hexadecimal string."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_blob",
+          "name": "from_blob",
+          "signature": "static from_blob(tx_blob: str) → Transaction",
+          "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+          "parameters": [
+            "tx_blob – the tx blob to decode."
+          ],
+          "returns": [
+            "The formatted transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+          "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the Transaction from."
+          ],
+          "returns": [
+            "A new Transaction object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A Transaction object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.get_hash",
+          "name": "get_hash",
+          "signature": "get_hash() → str",
+          "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+          "parameters": [],
+          "returns": [
+            "The hash of the Transaction object."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.get_transaction_type",
+          "name": "get_transaction_type",
+          "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+          "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+          "parameters": [
+            "transaction_type – The String name of the Transaction object."
+          ],
+          "returns": [
+            "The transaction class with the given name."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.has_flag",
+          "name": "has_flag",
+          "signature": "has_flag(flag: int) → bool",
+          "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+          "parameters": [
+            "flag – The given flag value for which the function will determine whether it is set."
+          ],
+          "returns": [
+            "Whether the transaction has the given flag value set."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_signed",
+          "name": "is_signed",
+          "signature": "is_signed() → bool",
+          "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+          "parameters": [],
+          "returns": [
+            "Whether the transaction has been signed"
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of a Transaction."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.to_xrpl",
+          "name": "to_xrpl",
+          "signature": "to_xrpl() → Dict[str, Any]",
+          "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+          "parameters": [],
+          "returns": [
+            "A JSON-like dictionary in the JSON format used by the binary codec."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "account: str",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.account",
+          "description": "The address of the sender of the transaction. Required."
+        },
+        {
+          "name": "account_txn_id: str | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.account_txn_id",
+          "description": "A hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details."
+        },
+        {
+          "name": "fee: str = '0'",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.fee",
+          "description": "(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details."
+        },
+        {
+          "name": "flags: int = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.flags",
+          "description": "The Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward."
+        },
+        {
+          "name": "last_ledger_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.last_ledger_sequence",
+          "description": "The highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details."
+        },
+        {
+          "name": "ledger_sequence: int",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.ledger_sequence",
+          "description": "The ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required."
+        },
+        {
+          "name": "memos: List[Memo] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.memos",
+          "description": "Additional arbitrary information attached to this transaction."
+        },
+        {
+          "name": "network_id: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.network_id",
+          "description": "The network id of the transaction."
+        },
+        {
+          "name": "sequence: int = 0",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.sequence",
+          "description": "(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details."
+        },
+        {
+          "name": "signers: List[Signer] | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.signers",
+          "description": "Signing data authorizing a multi-signed transaction. Added during multi-signing."
+        },
+        {
+          "name": "signing_pub_key: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.signing_pub_key",
+          "description": "The public key authorizing a single-signed transaction. Automatically added during signing."
+        },
+        {
+          "name": "source_tag: None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.source_tag",
+          "description": "An arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from."
+        },
+        {
+          "name": "ticket_sequence: int | None = None",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.ticket_sequence",
+          "description": "The sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id."
+        },
+        {
+          "name": "transaction_type: PseudoTransactionType = 'UNLModify'",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.transaction_type",
+          "description": ""
+        },
+        {
+          "name": "txn_signature: str = ''",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.txn_signature",
+          "description": "The cryptographic signature from the sender that authorizes this transaction. Automatically added during signing."
+        },
+        {
+          "name": "unl_modify_disabling: int",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.unl_modify_disabling",
+          "description": "If 1, this change represents adding a validator to the Negative UNL. If 0, this change represents removing a validator from the Negative UNL. (No other values are allowed.) This field is required."
+        },
+        {
+          "name": "unl_modify_validator: str",
+          "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.unl_modify_validator",
+          "description": "The validator to add or remove, as identified by its master public key. This field is required."
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment",
+      "name": "EnableAmendment",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendment(*, account_txn_id: Optional[str] = None, flags: int | ~typing.List[int] = 0, last_ledger_sequence: Optional[int] = None, memos: Optional[List[Memo]] = None, signers: Optional[List[Signer]] = None, ticket_sequence: Optional[int] = None, network_id: Optional[int] = None, amendment: str = <object object>, ledger_sequence: int = <object object>, tf_got_majority: bool | None = None, tf_lost_majority: bool | None = None)",
+      "description": "Bases: PseudoTransaction\nAn EnableAmendment pseudo-transaction marks a change in status of an amendment to the XRP Ledger protocol, including:\nA proposed amendment gained supermajority approval from validators.\nA proposed amendment lost supermajority approval.\nA proposed amendment has been enabled.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nA unique identifier for the amendment. This is not intended to be a human-readable name. See Amendments for a list of known amendments. This field is required.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nThe ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nSupport for this amendment increased to at least 80% of trusted validators starting with this ledger version.\nSupport for this amendment decreased to less than 80% of trusted validators starting with this ledger version.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "tx_blob – the tx blob to decode.",
+        "value – The value to construct the Transaction from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "transaction_type – The String name of the Transaction object.",
+        "flag – The given flag value for which the function will determine whether it is set.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string.",
+        "The formatted transaction.",
+        "A new Transaction object, constructed using the given parameters.",
+        "A Transaction object instantiated from the input.",
+        "The hash of the Transaction object.",
+        "The transaction class with the given name.",
+        "Whether the transaction has the given flag value set.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether the transaction has been signed",
+        "Whether this BaseModel is valid.",
+        "The dictionary representation of a Transaction.",
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.blob",
+      "name": "blob",
+      "signature": "blob() → str",
+      "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+      "parameters": [],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_blob",
+      "name": "from_blob",
+      "signature": "static from_blob(tx_blob: str) → Transaction",
+      "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+      "parameters": [
+        "tx_blob – the tx blob to decode."
+      ],
+      "returns": [
+        "The formatted transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+      "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the Transaction from."
+      ],
+      "returns": [
+        "A new Transaction object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A Transaction object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.get_hash",
+      "name": "get_hash",
+      "signature": "get_hash() → str",
+      "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+      "parameters": [],
+      "returns": [
+        "The hash of the Transaction object."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.get_transaction_type",
+      "name": "get_transaction_type",
+      "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+      "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+      "parameters": [
+        "transaction_type – The String name of the Transaction object."
+      ],
+      "returns": [
+        "The transaction class with the given name."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.has_flag",
+      "name": "has_flag",
+      "signature": "has_flag(flag: int) → bool",
+      "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+      "parameters": [
+        "flag – The given flag value for which the function will determine whether it is set."
+      ],
+      "returns": [
+        "Whether the transaction has the given flag value set."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_signed",
+      "name": "is_signed",
+      "signature": "is_signed() → bool",
+      "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+      "parameters": [],
+      "returns": [
+        "Whether the transaction has been signed"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of a Transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.to_xrpl",
+      "name": "to_xrpl",
+      "signature": "to_xrpl() → Dict[str, Any]",
+      "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+      "parameters": [],
+      "returns": [
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendment.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag",
+      "name": "EnableAmendmentFlag",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: int, Enum\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction.\nA Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nSee EnableAmendment Flags\nSupport for this amendment increased to at least 80% of trusted validators starting with this ledger version.\nSupport for this amendment decreased to less than 80% of trusted validators starting with this ledger version.\nReturn integer ratio.\nReturn a pair of integers, whose ratio is exactly equal to the original int and with a positive denominator.\nNumber of ones in the binary representation of the absolute value of self.\nAlso known as the population count.\nNumber of bits necessary to represent self in binary.\nReturns self, the complex conjugate of any int.\nthe denominator of a rational number in lowest terms\nReturn the integer represented by the given array of bytes.\nHolds the array of bytes to convert. The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nIndicates whether two’s complement is used to represent the integer.\nthe imaginary part of a complex number\nthe numerator of a rational number in lowest terms\nthe real part of a complex number\nReturn an array of bytes representing an integer.\nLength of bytes object to use. An OverflowError is raised if the integer is not representable with the given number of bytes. Default is length 1.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nDetermines whether two’s complement is used to represent the integer. If signed is False and a negative integer is given, an OverflowError is raised.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.as_integer_ratio",
+      "name": "as_integer_ratio",
+      "signature": "as_integer_ratio()",
+      "description": "Return integer ratio.\nReturn a pair of integers, whose ratio is exactly equal to the original int and with a positive denominator.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.bit_count",
+      "name": "bit_count",
+      "signature": "bit_count()",
+      "description": "Number of ones in the binary representation of the absolute value of self.\nAlso known as the population count.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.bit_length",
+      "name": "bit_length",
+      "signature": "bit_length()",
+      "description": "Number of bits necessary to represent self in binary.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.conjugate",
+      "name": "conjugate",
+      "signature": "conjugate()",
+      "description": "Returns self, the complex conjugate of any int.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.from_bytes",
+      "name": "from_bytes",
+      "signature": "from_bytes(byteorder='big', *, signed=False)",
+      "description": "Return the integer represented by the given array of bytes.\nHolds the array of bytes to convert. The argument must either support the buffer protocol or be an iterable object producing bytes. Bytes and bytearray are examples of built-in objects that support the buffer protocol.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nIndicates whether two’s complement is used to represent the integer.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlag.to_bytes",
+      "name": "to_bytes",
+      "signature": "to_bytes(length=1, byteorder='big', *, signed=False)",
+      "description": "Return an array of bytes representing an integer.\nLength of bytes object to use. An OverflowError is raised if the integer is not representable with the given number of bytes. Default is length 1.\nThe byte order used to represent the integer. If byteorder is ‘big’, the most significant byte is at the beginning of the byte array. If byteorder is ‘little’, the most significant byte is at the end of the byte array. To request the native byte order of the host system, use `sys.byteorder’ as the byte order value. Default is to use ‘big’.\nDetermines whether two’s complement is used to represent the integer. If signed is False and a negative integer is given, an OverflowError is raised.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface",
+      "name": "EnableAmendmentFlagInterface",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface",
+      "description": "Bases: FlagInterface\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction.\nA Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nSee EnableAmendment Flags\nCreate a new dictionary with keys from iterable and values set to value.\nReturn the value for key if key is in the dictionary, else default.\nIf the key is not found, return the default if given; otherwise, raise a KeyError.\nRemove and return a (key, value) pair as a 2-tuple.\nPairs are returned in LIFO (last-in, first-out) order. Raises KeyError if the dict is empty.\nInsert key with a value of default if key is not in the dictionary.\nReturn the value for key if key is in the dictionary, else default.\nIf E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k]",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.clear",
+      "name": "clear",
+      "signature": "clear() → None.  Remove all items from D.",
+      "description": "",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.copy",
+      "name": "copy",
+      "signature": "copy() → a shallow copy of D",
+      "description": "",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.fromkeys",
+      "name": "fromkeys",
+      "signature": "fromkeys(value=None, /)",
+      "description": "Create a new dictionary with keys from iterable and values set to value.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.get",
+      "name": "get",
+      "signature": "get(key, default=None, /)",
+      "description": "Return the value for key if key is in the dictionary, else default.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.items",
+      "name": "items",
+      "signature": "items() → a set-like object providing a view on D's items",
+      "description": "",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.keys",
+      "name": "keys",
+      "signature": "keys() → a set-like object providing a view on D's keys",
+      "description": "",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.pop",
+      "name": "pop",
+      "signature": "pop(k[, d]) → v, remove specified key and return the corresponding value.",
+      "description": "If the key is not found, return the default if given; otherwise, raise a KeyError.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.popitem",
+      "name": "popitem",
+      "signature": "popitem()",
+      "description": "Remove and return a (key, value) pair as a 2-tuple.\nPairs are returned in LIFO (last-in, first-out) order. Raises KeyError if the dict is empty.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.setdefault",
+      "name": "setdefault",
+      "signature": "setdefault(key, default=None, /)",
+      "description": "Insert key with a value of default if key is not in the dictionary.\nReturn the value for key if key is in the dictionary, else default.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.update",
+      "name": "update",
+      "signature": "update([E, ]**F) → None.  Update D from dict/iterable E and F.",
+      "description": "If E is present and has a .keys() method, then does: for k in E: D[k] = E[k] If E is present and lacks a .keys() method, then does: for k, v in E: D[k] = v In either case, this is followed by: for k in F: D[k] = F[k]",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.EnableAmendmentFlagInterface.values",
+      "name": "values",
+      "signature": "values() → an object providing a view on D's values",
+      "description": "",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee",
+      "name": "SetFee",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.SetFee(*, account_txn_id: str | None = None, flags: Dict[str, bool] | int | List[int] = 0, last_ledger_sequence: int | None = None, memos: List[Memo] | None = None, signers: List[Signer] | None = None, ticket_sequence: int | None = None, network_id: int | None = None, base_fee: str | None = None, reference_fee_units: int | None = None, reserve_base: int | None = None, reserve_increment: int | None = None, base_fee_drops: str | None = None, reserve_base_drops: str | None = None, reserve_increment_drops: str | None = None)",
+      "description": "Bases: PseudoTransaction\nA SetFee pseudo-transaction marks a change in transaction cost or reserve requirements as a result of Fee Voting.\nThe parameters are different depending on if this is before or after the `XRPFees Amendment<https://xrpl.org/known-amendments.html#xrpfees>`_\nBefore the XRPFees Amendment which was proposed in rippled 1.10.0 base_fee, reference_fee_units, reserve_base, and reserve_increment were required fields.\nAfter the XRPFees Amendment, base_fee_drops, reserve_base_drops, and reserve_increment_drops are required fields.\nNo SetFee Pseudo Transaction should contain fields from BOTH before and after the XRPFees amendment.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nThe charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required.\nThe charge, in drops of XRP, for the reference transaction, as hex. (This is the transaction cost before scaling for load.) This field is required.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nA List of flags, or a bitwise map of flags, modifying this transaction’s behavior. See Flags Field for more details.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\nThe cost, in fee units, of the reference transaction. This field is required.\nThe base reserve, in drops. This field is required.\nThe base reserve, in drops. This field is required.\nThe incremental reserve, in drops. This field is required.\nThe incremental reserve, in drops. This field is required.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "tx_blob – the tx blob to decode.",
+        "value – The value to construct the Transaction from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "transaction_type – The String name of the Transaction object.",
+        "flag – The given flag value for which the function will determine whether it is set.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string.",
+        "The formatted transaction.",
+        "A new Transaction object, constructed using the given parameters.",
+        "A Transaction object instantiated from the input.",
+        "The hash of the Transaction object.",
+        "The transaction class with the given name.",
+        "Whether the transaction has the given flag value set.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether the transaction has been signed",
+        "Whether this BaseModel is valid.",
+        "The dictionary representation of a Transaction.",
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.blob",
+      "name": "blob",
+      "signature": "blob() → str",
+      "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+      "parameters": [],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_blob",
+      "name": "from_blob",
+      "signature": "static from_blob(tx_blob: str) → Transaction",
+      "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+      "parameters": [
+        "tx_blob – the tx blob to decode."
+      ],
+      "returns": [
+        "The formatted transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+      "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the Transaction from."
+      ],
+      "returns": [
+        "A new Transaction object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A Transaction object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.get_hash",
+      "name": "get_hash",
+      "signature": "get_hash() → str",
+      "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+      "parameters": [],
+      "returns": [
+        "The hash of the Transaction object."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.get_transaction_type",
+      "name": "get_transaction_type",
+      "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+      "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+      "parameters": [
+        "transaction_type – The String name of the Transaction object."
+      ],
+      "returns": [
+        "The transaction class with the given name."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.has_flag",
+      "name": "has_flag",
+      "signature": "has_flag(flag: int) → bool",
+      "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+      "parameters": [
+        "flag – The given flag value for which the function will determine whether it is set."
+      ],
+      "returns": [
+        "Whether the transaction has the given flag value set."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_signed",
+      "name": "is_signed",
+      "signature": "is_signed() → bool",
+      "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+      "parameters": [],
+      "returns": [
+        "Whether the transaction has been signed"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of a Transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.to_xrpl",
+      "name": "to_xrpl",
+      "signature": "to_xrpl() → Dict[str, Any]",
+      "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+      "parameters": [],
+      "returns": [
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.SetFee.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify",
+      "name": "UNLModify",
+      "signature": "class xrpl.models.transactions.pseudo_transactions.UNLModify(*, account_txn_id: Optional[str] = None, flags: int = 0, last_ledger_sequence: Optional[int] = None, memos: Optional[List[Memo]] = None, signers: Optional[List[Signer]] = None, ticket_sequence: Optional[int] = None, network_id: Optional[int] = None, ledger_sequence: int = <object object>, unl_modify_disabling: int = <object object>, unl_modify_validator: str = <object object>)",
+      "description": "Bases: PseudoTransaction\nA UNLModify pseudo-transaction marks a change to the Negative UNL, indicating that a trusted validator has gone offline or come back online.\nThe address of the sender of the transaction. Required.\nA hash value identifying a previous transaction from the same sender. If provided, this transaction is only considered valid if the identified transaction is the most recent transaction sent by this address. See AccountTxnID for details.\nCreates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.\n(Auto-fillable) The amount of XRP to destroy as a cost to send this transaction. See Transaction Cost for details.\nThe Flags value of the EnableAmendment pseudo-transaction indicates the status of the amendment at the time of the ledger including the pseudo-transaction. A Flags value of 0 (no flags) or an omitted Flags field indicates that the amendment has been enabled, and applies to all ledgers afterward.\nDecodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.\nConstruct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields\nHashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.\nReturns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.\nReturns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nChecks if a transaction has been signed.\nWhether the transaction has been signed\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nThe highest ledger index this transaction can appear in. Specifying this field places a strict upper limit on how long the transaction can wait to be validated or rejected. See Reliable Transaction Submission for details.\nThe ledger index where this pseudo-transaction appears. This distinguishes the pseudo-transaction from other occurrences of the same change. This field is required.\nAdditional arbitrary information attached to this transaction.\nThe network id of the transaction.\n(Auto-fillable) The sequence number of the transaction. Must match the sending account’s next unused sequence number. See Account Sequence for details.\nSigning data authorizing a multi-signed transaction. Added during multi-signing.\nThe public key authorizing a single-signed transaction. Automatically added during signing.\nAn arbitrary source tag representing a hosted user or specific purpose at the sending account where this transaction comes from.\nThe sequence number of the ticket to use in place of a Sequence number. If this is provided, sequence must be 0. Cannot be used with account_txn_id.\nReturns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.\nCreates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.\nThe cryptographic signature from the sender that authorizes this transaction. Automatically added during signing.\nIf 1, this change represents adding a validator to the Negative UNL. If 0, this change represents removing a validator from the Negative UNL. (No other values are allowed.) This field is required.\nThe validator to add or remove, as identified by its master public key. This field is required.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "tx_blob – the tx blob to decode.",
+        "value – The value to construct the Transaction from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "transaction_type – The String name of the Transaction object.",
+        "flag – The given flag value for which the function will determine whether it is set.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string.",
+        "The formatted transaction.",
+        "A new Transaction object, constructed using the given parameters.",
+        "A Transaction object instantiated from the input.",
+        "The hash of the Transaction object.",
+        "The transaction class with the given name.",
+        "Whether the transaction has the given flag value set.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether the transaction has been signed",
+        "Whether this BaseModel is valid.",
+        "The dictionary representation of a Transaction.",
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.blob",
+      "name": "blob",
+      "signature": "blob() → str",
+      "description": "Creates the canonical binary format of the Transaction object.\nThe binary-encoded object, as a hexadecimal string.",
+      "parameters": [],
+      "returns": [
+        "The binary-encoded object, as a hexadecimal string."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_blob",
+      "name": "from_blob",
+      "signature": "static from_blob(tx_blob: str) → Transaction",
+      "description": "Decodes a transaction blob.\ntx_blob – the tx blob to decode.\nThe formatted transaction.",
+      "parameters": [
+        "tx_blob – the tx blob to decode."
+      ],
+      "returns": [
+        "The formatted transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, Any]) → Self",
+      "description": "Construct a new Transaction from a dictionary of parameters.\nvalue – The value to construct the Transaction from.\nA new Transaction object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the Transaction from."
+      ],
+      "returns": [
+        "A new Transaction object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a Transaction object based on a JSON or JSON-string representation of data\nIn Payment transactions, the DeliverMax field is renamed to the Amount field.\nvalue – The dictionary or JSON string to be instantiated.\nA Transaction object instantiated from the input.\nXRPLModelException – If Payment transactions have different values for amount and deliver_max fields",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A Transaction object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.get_hash",
+      "name": "get_hash",
+      "signature": "get_hash() → str",
+      "description": "Hashes the Transaction object as the ledger does. Only valid for signed Transaction objects.\nThe hash of the Transaction object.\nXRPLModelException – if the Transaction is unsigned.",
+      "parameters": [],
+      "returns": [
+        "The hash of the Transaction object."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.get_transaction_type",
+      "name": "get_transaction_type",
+      "signature": "classmethod get_transaction_type(transaction_type: str) → Type[Transaction]",
+      "description": "Returns the correct transaction type based on the string name.\ntransaction_type – The String name of the Transaction object.\nThe transaction class with the given name.\nXRPLModelException – If transaction_type is not a valid Transaction type.",
+      "parameters": [
+        "transaction_type – The String name of the Transaction object."
+      ],
+      "returns": [
+        "The transaction class with the given name."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.has_flag",
+      "name": "has_flag",
+      "signature": "has_flag(flag: int) → bool",
+      "description": "Returns whether the transaction has the given flag value set.\nflag – The given flag value for which the function will determine whether it is set.\nWhether the transaction has the given flag value set.",
+      "parameters": [
+        "flag – The given flag value for which the function will determine whether it is set."
+      ],
+      "returns": [
+        "Whether the transaction has the given flag value set."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_signed",
+      "name": "is_signed",
+      "signature": "is_signed() → bool",
+      "description": "Checks if a transaction has been signed.\nWhether the transaction has been signed",
+      "parameters": [],
+      "returns": [
+        "Whether the transaction has been signed"
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of a Transaction.\nThe dictionary representation of a Transaction.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of a Transaction."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.to_xrpl",
+      "name": "to_xrpl",
+      "signature": "to_xrpl() → Dict[str, Any]",
+      "description": "Creates a JSON-like dictionary in the JSON format used by the binary codec based on the Transaction object.\nA JSON-like dictionary in the JSON format used by the binary codec.",
+      "parameters": [],
+      "returns": [
+        "A JSON-like dictionary in the JSON format used by the binary codec."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.transactions.pseudo_transactions.UNLModify.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

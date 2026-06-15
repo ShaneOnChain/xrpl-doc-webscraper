@@ -1,0 +1,259 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.asyncio.clients.html",
+  "section": "asyncio",
+  "name": "Async Network Clients",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.asyncio.clients.AsyncJsonRpcClient",
+      "name": "AsyncJsonRpcClient",
+      "signature": "class xrpl.asyncio.clients.AsyncJsonRpcClient(url: str)",
+      "description": "An async client for interacting with the rippled JSON RPC.\nMakes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+      "methods": [
+        {
+          "id": "xrpl.asyncio.clients.AsyncJsonRpcClient.request",
+          "name": "request",
+          "signature": "async request(request: Request) → Response",
+          "description": "Makes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+          "parameters": [
+            "request – The Request to send."
+          ],
+          "returns": [
+            "The Response for the given Request."
+          ],
+          "examples": []
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient",
+      "name": "AsyncWebsocketClient",
+      "signature": "class xrpl.asyncio.clients.AsyncWebsocketClient(url: str)",
+      "description": "An async client for interacting with the rippled WebSocket API.\nInstead of calling open and close yourself, you can use a context like so:\nDoing this will open and close the client for you and is preferred.\nNOTE: if you are not using subscriptions or other WebSocket-only features of rippled, you may not need to do anything other than open the client and make requests:\nHowever, if you are using some functionality that makes use of subscriptions or other “websocket-y” things, you can iterate over the client like so to read incoming messages:\nThe recommended way to use this client is to set up a Task using the asyncio library to listen to incoming messages and do something with them, but the above will work fine if you want to listen indefinitely. This is how you can use a Task to listen to messages without blocking. Note this example can be copied directly into a file and run with no changes:\nIf you need to ensure that you reconnect your websockets whenever they disconnect, you can create a supervisor like the example below. Note this example can be copied and run directly with no changes:\nCloses the connection.\nReturns whether the client is currently open.\nTrue if the client is currently open, False otherwise.\nConnects the client to the Web Socket API at the given URL.\nMakes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.\nSubmit the request represented by the request to the rippled node specified by this client’s URL. Unlike request, send does not wait for this request’s response. In many cases it may be more convenient to use request.\nrequest – A Request object representing information about a rippled request.\nXRPLWebsocketException – If there is already an open request by the request’s ID, or if this WebsocketBase is not open.",
+      "methods": [
+        {
+          "id": "xrpl.asyncio.clients.AsyncWebsocketClient.close",
+          "name": "close",
+          "signature": "async close() → None",
+          "description": "Closes the connection.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.asyncio.clients.AsyncWebsocketClient.is_open",
+          "name": "is_open",
+          "signature": "is_open() → bool",
+          "description": "Returns whether the client is currently open.\nTrue if the client is currently open, False otherwise.",
+          "parameters": [],
+          "returns": [
+            "True if the client is currently open, False otherwise."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.asyncio.clients.AsyncWebsocketClient.open",
+          "name": "open",
+          "signature": "async open() → None",
+          "description": "Connects the client to the Web Socket API at the given URL.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        },
+        {
+          "id": "xrpl.asyncio.clients.AsyncWebsocketClient.request",
+          "name": "request",
+          "signature": "async request(request: Request) → Response",
+          "description": "Makes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+          "parameters": [
+            "request – The Request to send."
+          ],
+          "returns": [
+            "The Response for the given Request."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.asyncio.clients.AsyncWebsocketClient.send",
+          "name": "send",
+          "signature": "async send(request: Request) → None",
+          "description": "Submit the request represented by the request to the rippled node specified by this client’s URL. Unlike request, send does not wait for this request’s response. In many cases it may be more convenient to use request.\nrequest – A Request object representing information about a rippled request.\nXRPLWebsocketException – If there is already an open request by the request’s ID, or if this WebsocketBase is not open.",
+          "parameters": [
+            "request – A Request object representing information about a rippled request."
+          ],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": []
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.asyncio.clients.AsyncJsonRpcClient",
+      "name": "AsyncJsonRpcClient",
+      "signature": "class xrpl.asyncio.clients.AsyncJsonRpcClient(url: str)",
+      "description": "An async client for interacting with the rippled JSON RPC.\nMakes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+      "parameters": [
+        "request – The Request to send."
+      ],
+      "returns": [
+        "The Response for the given Request."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncJsonRpcClient.request",
+      "name": "request",
+      "signature": "async request(request: Request) → Response",
+      "description": "Makes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+      "parameters": [
+        "request – The Request to send."
+      ],
+      "returns": [
+        "The Response for the given Request."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient",
+      "name": "AsyncWebsocketClient",
+      "signature": "class xrpl.asyncio.clients.AsyncWebsocketClient(url: str)",
+      "description": "An async client for interacting with the rippled WebSocket API.\nInstead of calling open and close yourself, you can use a context like so:\nDoing this will open and close the client for you and is preferred.\nNOTE: if you are not using subscriptions or other WebSocket-only features of rippled, you may not need to do anything other than open the client and make requests:\nHowever, if you are using some functionality that makes use of subscriptions or other “websocket-y” things, you can iterate over the client like so to read incoming messages:\nThe recommended way to use this client is to set up a Task using the asyncio library to listen to incoming messages and do something with them, but the above will work fine if you want to listen indefinitely. This is how you can use a Task to listen to messages without blocking. Note this example can be copied directly into a file and run with no changes:\nIf you need to ensure that you reconnect your websockets whenever they disconnect, you can create a supervisor like the example below. Note this example can be copied and run directly with no changes:\nCloses the connection.\nReturns whether the client is currently open.\nTrue if the client is currently open, False otherwise.\nConnects the client to the Web Socket API at the given URL.\nMakes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.\nSubmit the request represented by the request to the rippled node specified by this client’s URL. Unlike request, send does not wait for this request’s response. In many cases it may be more convenient to use request.\nrequest – A Request object representing information about a rippled request.\nXRPLWebsocketException – If there is already an open request by the request’s ID, or if this WebsocketBase is not open.",
+      "parameters": [
+        "request – The Request to send.",
+        "request – A Request object representing information about a rippled request."
+      ],
+      "returns": [
+        "True if the client is currently open, False otherwise.",
+        "The Response for the given Request."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient.close",
+      "name": "close",
+      "signature": "async close() → None",
+      "description": "Closes the connection.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient.is_open",
+      "name": "is_open",
+      "signature": "is_open() → bool",
+      "description": "Returns whether the client is currently open.\nTrue if the client is currently open, False otherwise.",
+      "parameters": [],
+      "returns": [
+        "True if the client is currently open, False otherwise."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient.open",
+      "name": "open",
+      "signature": "async open() → None",
+      "description": "Connects the client to the Web Socket API at the given URL.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient.request",
+      "name": "request",
+      "signature": "async request(request: Request) → Response",
+      "description": "Makes a request with this client and returns the response.\nrequest – The Request to send.\nThe Response for the given Request.",
+      "parameters": [
+        "request – The Request to send."
+      ],
+      "returns": [
+        "The Response for the given Request."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.AsyncWebsocketClient.send",
+      "name": "send",
+      "signature": "async send(request: Request) → None",
+      "description": "Submit the request represented by the request to the rippled node specified by this client’s URL. Unlike request, send does not wait for this request’s response. In many cases it may be more convenient to use request.\nrequest – A Request object representing information about a rippled request.\nXRPLWebsocketException – If there is already an open request by the request’s ID, or if this WebsocketBase is not open.",
+      "parameters": [
+        "request – A Request object representing information about a rippled request."
+      ],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.XRPLRequestFailureException.add_note",
+      "name": "add_note",
+      "signature": "add_note()",
+      "description": "Exception.add_note(note) – add a note to the exception",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.XRPLRequestFailureException.with_traceback",
+      "name": "with_traceback",
+      "signature": "with_traceback()",
+      "description": "Exception.with_traceback(tb) – set self.__traceback__ to tb and return self.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.json_to_response",
+      "name": "json_to_response",
+      "signature": "xrpl.asyncio.clients.json_to_response(json: Dict[str, Any]) → Response",
+      "description": "Converts a JSON response from the rippled server into a Response object.\njson – A dictionary representing the contents of the json response from the rippled server.\nA Response object containing the information in the rippled server’s response.",
+      "parameters": [
+        "json – A dictionary representing the contents of the json response from the rippled server."
+      ],
+      "returns": [
+        "A Response object containing the information in the rippled server’s response."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.request_to_json_rpc",
+      "name": "request_to_json_rpc",
+      "signature": "xrpl.asyncio.clients.request_to_json_rpc(request_object: Request) → Dict[str, Any]",
+      "description": "Converts a request model object to the appropriate JSON format for interacting with the rippled API.\nrequest_object – A Request object representing the parameters of a request to the rippled JSON RPC.\nA dictionary containing the attributes of this Request object formatted for submission to the rippled JSON RPC.",
+      "parameters": [
+        "request_object – A Request object representing the parameters of a request to the rippled JSON RPC."
+      ],
+      "returns": [
+        "A dictionary containing the attributes of this Request object formatted for submission to the rippled JSON RPC."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.request_to_websocket",
+      "name": "request_to_websocket",
+      "signature": "xrpl.asyncio.clients.request_to_websocket(request_object: Request) → Dict[str, Any]",
+      "description": "Converts a request model object to the appropriate format for interacting with the rippled API via the WebSocket API.\nrequest_object – A Request object representing the parameters of a request to the rippled JSON RPC.\nA dictionary containing the attributes of this Request object formatted for submission to the rippled WebSocket API.",
+      "parameters": [
+        "request_object – A Request object representing the parameters of a request to the rippled JSON RPC."
+      ],
+      "returns": [
+        "A dictionary containing the attributes of this Request object formatted for submission to the rippled WebSocket API."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.asyncio.clients.websocket_to_response",
+      "name": "websocket_to_response",
+      "signature": "xrpl.asyncio.clients.websocket_to_response(response_dict: Dict[str, Any]) → Response",
+      "description": "Converts a WebSocket API response from the rippled server into a Response object.\nresponse_dict – A dictionary representing the contents of the WebSocket API response from the rippled server.\nA Response object containing the information in the rippled server’s response.",
+      "parameters": [
+        "response_dict – A dictionary representing the contents of the WebSocket API response from the rippled server."
+      ],
+      "returns": [
+        "A Response object containing the information in the rippled server’s response."
+      ],
+      "examples": []
+    }
+  ],
+  "submodules": []
+}

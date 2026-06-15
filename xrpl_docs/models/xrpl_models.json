@@ -1,0 +1,347 @@
+{
+  "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.html",
+  "section": "models",
+  "name": "XRPL Models",
+  "description": "",
+  "classes": [
+    {
+      "id": "xrpl.models.base_model.BaseModel",
+      "name": "BaseModel",
+      "signature": "class xrpl.models.base_model.BaseModel",
+      "description": "Bases: ABC\nThe base class for all model types.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nReturns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "methods": [
+        {
+          "id": "xrpl.models.base_model.BaseModel.from_dict",
+          "name": "from_dict",
+          "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+          "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+          "parameters": [
+            "value – The value to construct the BaseModel from."
+          ],
+          "returns": [
+            "A new BaseModel object, constructed using the given parameters."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.base_model.BaseModel.from_xrpl",
+          "name": "from_xrpl",
+          "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+          "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+          "parameters": [
+            "value – The dictionary or JSON string to be instantiated."
+          ],
+          "returns": [
+            "A BaseModel object instantiated from the input."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.base_model.BaseModel.is_dict_of_model",
+          "name": "is_dict_of_model",
+          "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+          "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+          "parameters": [
+            "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+          ],
+          "returns": [
+            "True if dictionary is a dict representation of an instance of this class; False if not."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.base_model.BaseModel.is_valid",
+          "name": "is_valid",
+          "signature": "is_valid() → bool",
+          "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+          "parameters": [],
+          "returns": [
+            "Whether this BaseModel is valid."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.base_model.BaseModel.to_dict",
+          "name": "to_dict",
+          "signature": "to_dict() → Dict[str, Any]",
+          "description": "Returns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.",
+          "parameters": [],
+          "returns": [
+            "The dictionary representation of a BaseModel."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.base_model.BaseModel.validate",
+          "name": "validate",
+          "signature": "validate() → None",
+          "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+          "parameters": [],
+          "returns": [],
+          "examples": []
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "xrpl.models.response.Response",
+      "name": "Response",
+      "signature": "class xrpl.models.response.Response(*, status: ~xrpl.models.response.ResponseStatus = <object object>, result: ~typing.Dict[str, ~typing.Any] = <object object>, id: int | str | None = None, type: ~xrpl.models.response.ResponseType | None = None)",
+      "description": "Bases: BaseModel\nThe base class for all network response types.\nRepresents fields common to all response types.\nReturns whether the request contains at least one transactions with the partial payment flag set.\nTrue if at least one transaction in this Response has the partial payment flag set. False otherwise.\nReturns whether the request was successfully received and understood by the server.\nWhether the request was successfully received and understood by the server.\nThis field is required.\nThis field is required.",
+      "methods": [
+        {
+          "id": "xrpl.models.response.Response.contains_partial_payment",
+          "name": "contains_partial_payment",
+          "signature": "contains_partial_payment() → bool",
+          "description": "Returns whether the request contains at least one transactions with the partial payment flag set.\nTrue if at least one transaction in this Response has the partial payment flag set. False otherwise.",
+          "parameters": [],
+          "returns": [
+            "True if at least one transaction in this Response has the partial payment flag set. False otherwise."
+          ],
+          "examples": []
+        },
+        {
+          "id": "xrpl.models.response.Response.is_successful",
+          "name": "is_successful",
+          "signature": "is_successful() → bool",
+          "description": "Returns whether the request was successfully received and understood by the server.\nWhether the request was successfully received and understood by the server.",
+          "parameters": [],
+          "returns": [
+            "Whether the request was successfully received and understood by the server."
+          ],
+          "examples": []
+        }
+      ],
+      "attributes": [
+        {
+          "name": "id: int | str | None = None",
+          "id": "xrpl.models.response.Response.id",
+          "description": ""
+        },
+        {
+          "name": "result: Dict[str, Any]",
+          "id": "xrpl.models.response.Response.result",
+          "description": "This field is required."
+        },
+        {
+          "name": "status: ResponseStatus",
+          "id": "xrpl.models.response.Response.status",
+          "description": "This field is required."
+        },
+        {
+          "name": "type: ResponseType | None = None",
+          "id": "xrpl.models.response.Response.type",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.response.ResponseStatus",
+      "name": "ResponseStatus",
+      "signature": "class xrpl.models.response.ResponseStatus(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: str, Enum\nRepresents the different status possibilities.",
+      "methods": [],
+      "attributes": [
+        {
+          "name": "ERROR = 'error'",
+          "id": "xrpl.models.response.ResponseStatus.ERROR",
+          "description": ""
+        },
+        {
+          "name": "SUCCESS = 'success'",
+          "id": "xrpl.models.response.ResponseStatus.SUCCESS",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "xrpl.models.response.ResponseType",
+      "name": "ResponseType",
+      "signature": "class xrpl.models.response.ResponseType(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: str, Enum\nRepresents the different response types a Response can have.",
+      "methods": [],
+      "attributes": [
+        {
+          "name": "LEDGER_CLOSED = 'ledgerClosed'",
+          "id": "xrpl.models.response.ResponseType.LEDGER_CLOSED",
+          "description": ""
+        },
+        {
+          "name": "RESPONSE = 'response'",
+          "id": "xrpl.models.response.ResponseType.RESPONSE",
+          "description": ""
+        },
+        {
+          "name": "TRANSACTION = 'transaction'",
+          "id": "xrpl.models.response.ResponseType.TRANSACTION",
+          "description": ""
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "xrpl.models.base_model.BaseModel",
+      "name": "BaseModel",
+      "signature": "class xrpl.models.base_model.BaseModel",
+      "description": "Bases: ABC\nThe base class for all model types.\nConstruct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.\nCreates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.\nChecks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.\nReturns whether this BaseModel is valid.\nWhether this BaseModel is valid.\nReturns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.\nRaises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from.",
+        "value – The dictionary or JSON string to be instantiated.",
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters.",
+        "A BaseModel object instantiated from the input.",
+        "True if dictionary is a dict representation of an instance of this class; False if not.",
+        "Whether this BaseModel is valid.",
+        "The dictionary representation of a BaseModel."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.from_dict",
+      "name": "from_dict",
+      "signature": "classmethod from_dict(value: Dict[str, str | int | List[Any] | Dict[str, Any]]) → Self",
+      "description": "Construct a new BaseModel from a dictionary of parameters.\nvalue – The value to construct the BaseModel from.\nA new BaseModel object, constructed using the given parameters.\nXRPLModelException – If the dictionary provided is invalid.",
+      "parameters": [
+        "value – The value to construct the BaseModel from."
+      ],
+      "returns": [
+        "A new BaseModel object, constructed using the given parameters."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.from_xrpl",
+      "name": "from_xrpl",
+      "signature": "classmethod from_xrpl(value: str | Dict[str, Any]) → Self",
+      "description": "Creates a BaseModel object based on a JSON-like dictionary of keys in the JSON format used by the binary codec, or an actual JSON string representing the same data.\nvalue – The dictionary or JSON string to be instantiated.\nA BaseModel object instantiated from the input.",
+      "parameters": [
+        "value – The dictionary or JSON string to be instantiated."
+      ],
+      "returns": [
+        "A BaseModel object instantiated from the input."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.is_dict_of_model",
+      "name": "is_dict_of_model",
+      "signature": "classmethod is_dict_of_model(dictionary: Any) → bool",
+      "description": "Checks whether the provided dictionary is a dictionary representation of this class.\nNote: This only checks the exact model, and does not count model inheritance. This method returns False if the dictionary represents a subclass of this class.\ndictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON.\nTrue if dictionary is a dict representation of an instance of this class; False if not.",
+      "parameters": [
+        "dictionary – The dictionary to check. Note: The input dictionary can be of non-dict type. For instance, a str representation of JSON."
+      ],
+      "returns": [
+        "True if dictionary is a dict representation of an instance of this class; False if not."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.is_valid",
+      "name": "is_valid",
+      "signature": "is_valid() → bool",
+      "description": "Returns whether this BaseModel is valid.\nWhether this BaseModel is valid.",
+      "parameters": [],
+      "returns": [
+        "Whether this BaseModel is valid."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.to_dict",
+      "name": "to_dict",
+      "signature": "to_dict() → Dict[str, Any]",
+      "description": "Returns the dictionary representation of a BaseModel.\nIf not overridden, returns the object dict with all non-None values.\nThe dictionary representation of a BaseModel.",
+      "parameters": [],
+      "returns": [
+        "The dictionary representation of a BaseModel."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.base_model.BaseModel.validate",
+      "name": "validate",
+      "signature": "validate() → None",
+      "description": "Raises if this object is invalid.\nXRPLModelException – if this object is invalid.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.response.Response",
+      "name": "Response",
+      "signature": "class xrpl.models.response.Response(*, status: ~xrpl.models.response.ResponseStatus = <object object>, result: ~typing.Dict[str, ~typing.Any] = <object object>, id: int | str | None = None, type: ~xrpl.models.response.ResponseType | None = None)",
+      "description": "Bases: BaseModel\nThe base class for all network response types.\nRepresents fields common to all response types.\nReturns whether the request contains at least one transactions with the partial payment flag set.\nTrue if at least one transaction in this Response has the partial payment flag set. False otherwise.\nReturns whether the request was successfully received and understood by the server.\nWhether the request was successfully received and understood by the server.\nThis field is required.\nThis field is required.",
+      "parameters": [],
+      "returns": [
+        "True if at least one transaction in this Response has the partial payment flag set. False otherwise.",
+        "Whether the request was successfully received and understood by the server."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.response.Response.contains_partial_payment",
+      "name": "contains_partial_payment",
+      "signature": "contains_partial_payment() → bool",
+      "description": "Returns whether the request contains at least one transactions with the partial payment flag set.\nTrue if at least one transaction in this Response has the partial payment flag set. False otherwise.",
+      "parameters": [],
+      "returns": [
+        "True if at least one transaction in this Response has the partial payment flag set. False otherwise."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.response.Response.is_successful",
+      "name": "is_successful",
+      "signature": "is_successful() → bool",
+      "description": "Returns whether the request was successfully received and understood by the server.\nWhether the request was successfully received and understood by the server.",
+      "parameters": [],
+      "returns": [
+        "Whether the request was successfully received and understood by the server."
+      ],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.response.ResponseStatus",
+      "name": "ResponseStatus",
+      "signature": "class xrpl.models.response.ResponseStatus(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: str, Enum\nRepresents the different status possibilities.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    },
+    {
+      "id": "xrpl.models.response.ResponseType",
+      "name": "ResponseType",
+      "signature": "class xrpl.models.response.ResponseType(value, names=None, *, module=None, qualname=None, type=None, start=1, boundary=None)",
+      "description": "Bases: str, Enum\nRepresents the different response types a Response can have.",
+      "parameters": [],
+      "returns": [],
+      "examples": []
+    }
+  ],
+  "submodules": [
+    {
+      "name": "XRPL Amount Models",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.amounts.html"
+    },
+    {
+      "name": "XRPL Currency Models",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.currencies.html"
+    },
+    {
+      "name": "XRPL Request Models",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.requests.html"
+    },
+    {
+      "name": "XRPL Transaction Models",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.html"
+    },
+    {
+      "name": "XRPL Pseudo-Transaction Models",
+      "url": "https://xrpl-py.readthedocs.io/en/stable/source/xrpl.models.transactions.pseudo_transactions.html"
+    }
+  ]
+}
